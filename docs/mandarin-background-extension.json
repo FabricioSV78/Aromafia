@@ -1,0 +1,48 @@
+{
+  "original": {
+    "path": "public/images/perfumes/Mandarin Sky/2.png",
+    "width": 1086,
+    "height": 1448,
+    "sha256": "5b684c21077da429834a9913b77dcee1c52f4a1b244ff9602f94e2134aa0514a"
+  },
+  "background": {
+    "path": "src/assets/perfumes/background-extensions/mandarine-ai-square-background-v1.png",
+    "tool": "built-in image_gen",
+    "sha256": "9c0aa4629708822b5c404fb94898925f41314405d15d42f16d4a44496131a0b8"
+  },
+  "prompt": "Extend only the studio background horizontally to a square, with the original portrait in the central 75%, full height. Continue the peach cream backdrop, light and shadows; no new objects or text.",
+  "assembly": {
+    "path": "src/assets/perfumes/background-extensions/mandarine-detail-square-v2.png",
+    "width": 1448,
+    "height": 1448,
+    "originalOffsetX": 181,
+    "backgroundFeatherPx": 32,
+    "backgroundColorMatch": "Real edge light/shadow colors with 10% generated background variation.",
+    "shadowContinuation": "Progressive vertical diffusion toward the outside, up to 72px.",
+    "originalProductRegionVerifiedIdentical": true,
+    "note": "Generated center is covered by the original source. Only side background and empty edge margins use generated pixels."
+  },
+  "derivatives": [
+    {
+      "path": "public/images/perfumes/mandarine-supplied-detail-square-v2-640.webp",
+      "width": 640,
+      "height": 640,
+      "bytes": 54144,
+      "sha256": "07828d94c2bc670cd791854f37c85ef932996d3c20aa70a33490d8121f4cc66d"
+    },
+    {
+      "path": "public/images/perfumes/mandarine-supplied-detail-square-v2-960.webp",
+      "width": 960,
+      "height": 960,
+      "bytes": 122120,
+      "sha256": "dc0880a3320b07ed6445c98c2c8a8559e5d1c93020f919ba5ed6ad6dbd01634f"
+    },
+    {
+      "path": "public/images/perfumes/mandarine-supplied-detail-square-v2-1448.webp",
+      "width": 1448,
+      "height": 1448,
+      "bytes": 278542,
+      "sha256": "087b0286dffcae1439896459ad07cd5addc09c36a649044749c617d476c7d443"
+    }
+  ]
+}

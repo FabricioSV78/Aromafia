@@ -1,0 +1,103 @@
+{
+  "preparedOn": "2026-11-03",
+  "source": {
+    "path": "pantalla_inicial/AROMAFIA · Animación de logo v3 (1).html",
+    "bytes": 660630,
+    "sha256": "203e2cf9c584670c636f88c66070e3d64bb91746180da6a5c6f59ee60fbfa8d2"
+  },
+  "destination": "/intro/v3/",
+  "treatment": "The 11 PNG images already embedded in the approved HTML are externalized byte-for-byte. Original body, keyframes, colors and proportions are retained. Only style/resource URLs, an initial pause, a single stage cycle and noindex metadata are added. No character layer is resegmented, edited or generated.",
+  "mainCycleSeconds": 16,
+  "rasterBytes": 460384,
+  "rasters": [
+    {
+      "name": "image-c373774ba8a55b69.png",
+      "bytes": 373531,
+      "sha256": "c373774ba8a55b69fb8f1b7391380ebe57a9f3ee9afb60ddb2316188858b0126",
+      "width": 675,
+      "height": 737
+    },
+    {
+      "name": "image-39ce09066e210c46.png",
+      "bytes": 7193,
+      "sha256": "39ce09066e210c4626f7b11f6cce74dbcff6ee83dce8063f03cfe12a13b25878",
+      "width": 142,
+      "height": 126
+    },
+    {
+      "name": "image-04b455873fe4dbb8.png",
+      "bytes": 8540,
+      "sha256": "04b455873fe4dbb8c5f507168365d1842ce0c678142f163a80f80914f3e13de7",
+      "width": 118,
+      "height": 126
+    },
+    {
+      "name": "image-b5f1655e519f9de1.png",
+      "bytes": 8785,
+      "sha256": "b5f1655e519f9de1242c0f2d5131e7f422f9ddffb6d76151653591faa68473a8",
+      "width": 127,
+      "height": 126
+    },
+    {
+      "name": "image-379a2764d87de25a.png",
+      "bytes": 10041,
+      "sha256": "379a2764d87de25aede4d15dde5600a9c4adab5557693dfb6d4b782c687f06e1",
+      "width": 147,
+      "height": 126
+    },
+    {
+      "name": "image-dde5c50747e3b488.png",
+      "bytes": 17028,
+      "sha256": "dde5c50747e3b4888553624c50fe9e26d4a01547e9ae2279519f09843541c50a",
+      "width": 149,
+      "height": 126
+    },
+    {
+      "name": "image-80b1828ab91af2f0.png",
+      "bytes": 5410,
+      "sha256": "80b1828ab91af2f0ec1f352cab14916e71c52e05a7173d583ce277754f2ec2a4",
+      "width": 98,
+      "height": 126
+    },
+    {
+      "name": "image-039fcb40f1aa4bbd.png",
+      "bytes": 2531,
+      "sha256": "039fcb40f1aa4bbd0100d5915c8361809261cfd6d6707728a17fa98c86a91274",
+      "width": 58,
+      "height": 126
+    },
+    {
+      "name": "image-9ef88f8375d692e8.png",
+      "bytes": 7156,
+      "sha256": "9ef88f8375d692e8e86f3886d831749e81558f850830e83eb6751ba2206ad98d",
+      "width": 136,
+      "height": 126
+    },
+    {
+      "name": "image-14801a5700ec5795.png",
+      "bytes": 18775,
+      "sha256": "14801a5700ec5795ba19f48729448b84a5f97d0913aa964339b677029d3f7fc5",
+      "width": 660,
+      "height": 54
+    },
+    {
+      "name": "image-0b96b4ba786cf6c0.png",
+      "bytes": 1394,
+      "sha256": "0b96b4ba786cf6c01ba3a2655023900ba46955b31c990b2263079df507f85b20",
+      "width": 218,
+      "height": 15
+    }
+  ],
+  "documents": [
+    {
+      "name": "scene.css",
+      "bytes": 39749,
+      "sha256": "ed8ace10bd81774c62a73a082b4ae27c3db560cb57ad60e0c21bf6834fd874d7"
+    },
+    {
+      "name": "scene.html",
+      "bytes": 7366,
+      "sha256": "397fa525cf03be1291099e821a31835ff5f57a2db7e80da05874342dd3b053e1"
+    }
+  ]
+}

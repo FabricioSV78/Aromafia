@@ -1,0 +1,572 @@
+{
+  "checkedOn": "2026-11-03",
+  "purpose": "Exactly two independently editable photographic roles per perfume: compact generalImage and higher-resolution detailImage. Both use the real product photograph, never a comparison poster.",
+  "encoder": {
+    "library": "sharp",
+    "version": "0.35.5",
+    "webpQuality": 96,
+    "alphaQuality": 100,
+    "effort": 6,
+    "smartSubsample": true,
+    "exact": true,
+    "withoutEnlargement": true,
+    "keepMetadata": true
+  },
+  "treatment": "Resize and encode only, full native canvas, source ICC/EXIF and alpha retained when present. No crop, recoloring, sharpening, background reconstruction, AI generation, overlaid price, notes, dupe or comparison information. Display framing and fill are separate editable role metadata.",
+  "provenance": [
+    "docs/perfume-clarity-derivatives.json",
+    "docs/royale-opal-hires-derivatives.json"
+  ],
+  "images": [
+    {
+      "slug": "9pm",
+      "source": {
+        "path": "src/assets/perfumes/afnan-9pm-official.jpg",
+        "width": 1080,
+        "height": 1080,
+        "sha256": "ab8ea774c30b99a1278e666e9941479c79c7f3c838baa4c75412881ffb3e9d11",
+        "hasAlpha": false,
+        "iccBytes": 424,
+        "exifBytes": 172
+      },
+      "generalImage": {
+        "fill": 0.86,
+        "framing": {
+          "left": 0.2,
+          "top": 0.1,
+          "width": 0.5888888888888889,
+          "height": 0.8185185185185185,
+          "anchorX": 0.5275,
+          "anchorY": 0.9355
+        },
+        "maskSrc": "/images/perfumes/masks-v2/9pm.svg",
+        "outputs": [
+          {
+            "path": "/images/perfumes/9pm-general-v1-320.webp",
+            "width": 320,
+            "height": 320,
+            "bytes": 5166,
+            "sha256": "63e15564f7f2eb075a13d6b318b27e7003851f37dec4de586e5a5336713f8098",
+            "hasAlpha": false,
+            "iccBytes": 424,
+            "exifBytes": 162
+          },
+          {
+            "path": "/images/perfumes/9pm-general-v1-640.webp",
+            "width": 640,
+            "height": 640,
+            "bytes": 12758,
+            "sha256": "cd37ae2eadf94e04876a54b9b381b6734b263e64522a3edd7e1a2211db10ca27",
+            "hasAlpha": false,
+            "iccBytes": 424,
+            "exifBytes": 162
+          }
+        ]
+      },
+      "detailImage": {
+        "fill": 0.94,
+        "framing": {
+          "left": 0.2,
+          "top": 0.1,
+          "width": 0.5888888888888889,
+          "height": 0.8185185185185185,
+          "anchorX": 0.5275,
+          "anchorY": 0.9355
+        },
+        "maskSrc": "/images/perfumes/masks-v2/9pm.svg",
+        "outputs": [
+          {
+            "path": "/images/perfumes/9pm-detail-v1-640.webp",
+            "width": 640,
+            "height": 640,
+            "bytes": 12758,
+            "sha256": "cd37ae2eadf94e04876a54b9b381b6734b263e64522a3edd7e1a2211db10ca27",
+            "hasAlpha": false,
+            "iccBytes": 424,
+            "exifBytes": 162
+          },
+          {
+            "path": "/images/perfumes/9pm-detail-v1-960.webp",
+            "width": 960,
+            "height": 960,
+            "bytes": 24816,
+            "sha256": "5bb4a54e67ff60444b4dca88d327edc9451fbf42758d3691aeee59641e545788",
+            "hasAlpha": false,
+            "iccBytes": 424,
+            "exifBytes": 162
+          },
+          {
+            "path": "/images/perfumes/9pm-detail-v1-1080.webp",
+            "width": 1080,
+            "height": 1080,
+            "bytes": 28506,
+            "sha256": "04f14fd55b4f1459a8c0295108959ff35820d16c8bbc82f159782c85cbe2560c",
+            "hasAlpha": false,
+            "iccBytes": 424,
+            "exifBytes": 162
+          }
+        ]
+      }
+    },
+    {
+      "slug": "hawas-ice",
+      "source": {
+        "path": "src/assets/perfumes/rasasi-hawas-ice-official.jpg",
+        "width": 1000,
+        "height": 1000,
+        "sha256": "6e1f184a2816e92db28c4e9103f246d930eb004668d71232e7853cd9cd42b1e8",
+        "hasAlpha": false,
+        "iccBytes": 0,
+        "exifBytes": 0
+      },
+      "generalImage": {
+        "fill": 0.86,
+        "framing": {
+          "left": 0.288,
+          "top": 0.104,
+          "width": 0.424,
+          "height": 0.728,
+          "anchorX": 0.5,
+          "anchorY": 0.9794
+        },
+        "maskSrc": "/images/perfumes/masks-v2/hawas-ice.svg",
+        "outputs": [
+          {
+            "path": "/images/perfumes/hawas-ice-general-v1-320.webp",
+            "width": 320,
+            "height": 320,
+            "bytes": 6592,
+            "sha256": "387066aa07e733a5062f3082184dccd959225b66036151cc3d3813723c70f1b4",
+            "hasAlpha": false,
+            "iccBytes": 0,
+            "exifBytes": 186
+          },
+          {
+            "path": "/images/perfumes/hawas-ice-general-v1-640.webp",
+            "width": 640,
+            "height": 640,
+            "bytes": 18230,
+            "sha256": "b703639645c822c42631004606c89085e6c14f0a55c1510b906af619b30b48bb",
+            "hasAlpha": false,
+            "iccBytes": 0,
+            "exifBytes": 186
+          }
+        ]
+      },
+      "detailImage": {
+        "fill": 0.94,
+        "framing": {
+          "left": 0.288,
+          "top": 0.104,
+          "width": 0.424,
+          "height": 0.728,
+          "anchorX": 0.5,
+          "anchorY": 0.9794
+        },
+        "maskSrc": "/images/perfumes/masks-v2/hawas-ice.svg",
+        "outputs": [
+          {
+            "path": "/images/perfumes/hawas-ice-detail-v1-640.webp",
+            "width": 640,
+            "height": 640,
+            "bytes": 18230,
+            "sha256": "b703639645c822c42631004606c89085e6c14f0a55c1510b906af619b30b48bb",
+            "hasAlpha": false,
+            "iccBytes": 0,
+            "exifBytes": 186
+          },
+          {
+            "path": "/images/perfumes/hawas-ice-detail-v1-960.webp",
+            "width": 960,
+            "height": 960,
+            "bytes": 31744,
+            "sha256": "45f8a5193c45cb5ab773d76866908527331573f6730cf94d8d12c6acfdd79c53",
+            "hasAlpha": false,
+            "iccBytes": 0,
+            "exifBytes": 186
+          },
+          {
+            "path": "/images/perfumes/hawas-ice-detail-v1-1000.webp",
+            "width": 1000,
+            "height": 1000,
+            "bytes": 31098,
+            "sha256": "3e760b7e0e0f1df69175643671886d582f75779032110aab778739d4beaadb7e",
+            "hasAlpha": false,
+            "iccBytes": 0,
+            "exifBytes": 186
+          }
+        ]
+      }
+    },
+    {
+      "slug": "mandarine",
+      "source": {
+        "path": "src/assets/perfumes/mandarin-sky-editorial-official.jpg",
+        "width": 900,
+        "height": 900,
+        "sha256": "f0ba2e35be696697a66368c5546a9e5d1fc96351933c42c231ecc3af1905a8e1",
+        "hasAlpha": false,
+        "iccBytes": 424,
+        "exifBytes": 172
+      },
+      "generalImage": {
+        "fill": 0.84,
+        "framing": {
+          "left": 0.2733333333333333,
+          "top": 0.1,
+          "width": 0.5155555555555555,
+          "height": 0.8333333333333334,
+          "anchorX": 0.4806,
+          "anchorY": 0.956
+        },
+        "maskSrc": "/images/perfumes/masks-v2/mandarine.svg",
+        "outputs": [
+          {
+            "path": "/images/perfumes/mandarine-general-v1-320.webp",
+            "width": 320,
+            "height": 320,
+            "bytes": 11742,
+            "sha256": "19d0cb6391cce1cf904311444ee6f676b50fb6e2e5783e8012b5bbe7ecca3bdf",
+            "hasAlpha": false,
+            "iccBytes": 424,
+            "exifBytes": 162
+          },
+          {
+            "path": "/images/perfumes/mandarine-general-v1-640.webp",
+            "width": 640,
+            "height": 640,
+            "bytes": 46186,
+            "sha256": "47907cad69196499b12d3d7ac2739ea723740ab8d60caa7c5a4e7cf589503b6a",
+            "hasAlpha": false,
+            "iccBytes": 424,
+            "exifBytes": 162
+          }
+        ]
+      },
+      "detailImage": {
+        "fill": 0.92,
+        "framing": {
+          "left": 0.2733333333333333,
+          "top": 0.1,
+          "width": 0.5155555555555555,
+          "height": 0.8333333333333334,
+          "anchorX": 0.4806,
+          "anchorY": 0.956
+        },
+        "maskSrc": "/images/perfumes/masks-v2/mandarine.svg",
+        "outputs": [
+          {
+            "path": "/images/perfumes/mandarine-detail-v1-640.webp",
+            "width": 640,
+            "height": 640,
+            "bytes": 46186,
+            "sha256": "47907cad69196499b12d3d7ac2739ea723740ab8d60caa7c5a4e7cf589503b6a",
+            "hasAlpha": false,
+            "iccBytes": 424,
+            "exifBytes": 162
+          },
+          {
+            "path": "/images/perfumes/mandarine-detail-v1-900.webp",
+            "width": 900,
+            "height": 900,
+            "bytes": 82636,
+            "sha256": "2954783fbab03fbc9b1e52203d3a3cf2ec3d524828d7a8c0a14ddd7a8d79f70b",
+            "hasAlpha": false,
+            "iccBytes": 424,
+            "exifBytes": 162
+          }
+        ]
+      }
+    },
+    {
+      "slug": "khamrah-qahwa",
+      "source": {
+        "path": "src/assets/perfumes/khamrah-qahwa-source.png",
+        "width": 1100,
+        "height": 1100,
+        "sha256": "a975dd876078f201e9751d3aa601cc0f19d18fe4ba3dfc2c7fcc18959486472c",
+        "hasAlpha": true,
+        "iccBytes": 424,
+        "exifBytes": 166
+      },
+      "generalImage": {
+        "fill": 0.84,
+        "framing": {
+          "left": 0.25636363636363635,
+          "top": 0.11,
+          "width": 0.4827272727272727,
+          "height": 0.7718181818181818,
+          "anchorX": 0.5,
+          "anchorY": 0.9835
+        },
+        "maskSrc": null,
+        "outputs": [
+          {
+            "path": "/images/perfumes/khamrah-qahwa-general-v1-320.webp",
+            "width": 320,
+            "height": 320,
+            "bytes": 25712,
+            "sha256": "e49210511b4bf81366b67b45a134cbf63aa1f5f90493709db8a084b5b4923cbe",
+            "hasAlpha": true,
+            "iccBytes": 424,
+            "exifBytes": 162
+          },
+          {
+            "path": "/images/perfumes/khamrah-qahwa-general-v1-640.webp",
+            "width": 640,
+            "height": 640,
+            "bytes": 77610,
+            "sha256": "566d9d6847f63f47d14ab7c6cd7ea03260bf70547033fd5cfd7432df5203c726",
+            "hasAlpha": true,
+            "iccBytes": 424,
+            "exifBytes": 162
+          }
+        ]
+      },
+      "detailImage": {
+        "fill": 0.92,
+        "framing": {
+          "left": 0.25636363636363635,
+          "top": 0.11,
+          "width": 0.4827272727272727,
+          "height": 0.7718181818181818,
+          "anchorX": 0.5,
+          "anchorY": 0.9835
+        },
+        "maskSrc": null,
+        "outputs": [
+          {
+            "path": "/images/perfumes/khamrah-qahwa-detail-v1-640.webp",
+            "width": 640,
+            "height": 640,
+            "bytes": 77610,
+            "sha256": "566d9d6847f63f47d14ab7c6cd7ea03260bf70547033fd5cfd7432df5203c726",
+            "hasAlpha": true,
+            "iccBytes": 424,
+            "exifBytes": 162
+          },
+          {
+            "path": "/images/perfumes/khamrah-qahwa-detail-v1-960.webp",
+            "width": 960,
+            "height": 960,
+            "bytes": 140618,
+            "sha256": "ede9040e06b75362d3e3399cfdd000d20f36daf4f072096bd8c041919026a73b",
+            "hasAlpha": true,
+            "iccBytes": 424,
+            "exifBytes": 162
+          },
+          {
+            "path": "/images/perfumes/khamrah-qahwa-detail-v1-1100.webp",
+            "width": 1100,
+            "height": 1100,
+            "bytes": 121572,
+            "sha256": "7adcd09c2c9b38693ab66bec24a431be9a5a9eaf3dd9486115d8dcc034c519ee",
+            "hasAlpha": true,
+            "iccBytes": 424,
+            "exifBytes": 162
+          }
+        ]
+      }
+    },
+    {
+      "slug": "hawas-malibu",
+      "source": {
+        "path": "src/assets/perfumes/rasasi-hawas-malibu-official.jpg",
+        "width": 1000,
+        "height": 1000,
+        "sha256": "5c18ab103c395c562048912708ec6fd0359c6f02b1f69c72c2b9c9d48db3d083",
+        "hasAlpha": false,
+        "iccBytes": 0,
+        "exifBytes": 0
+      },
+      "generalImage": {
+        "fill": 0.86,
+        "framing": {
+          "left": 0.264,
+          "top": 0.06,
+          "width": 0.484,
+          "height": 0.832,
+          "anchorX": 0.5062,
+          "anchorY": 0.9784
+        },
+        "maskSrc": "/images/perfumes/masks-v2/hawas-malibu.svg",
+        "outputs": [
+          {
+            "path": "/images/perfumes/hawas-malibu-general-v1-320.webp",
+            "width": 320,
+            "height": 320,
+            "bytes": 9750,
+            "sha256": "0d8eef514eb93d61fd74e2f69f838e3ec2d4f5245b94801e4f7cfc077919e82f",
+            "hasAlpha": false,
+            "iccBytes": 0,
+            "exifBytes": 186
+          },
+          {
+            "path": "/images/perfumes/hawas-malibu-general-v1-640.webp",
+            "width": 640,
+            "height": 640,
+            "bytes": 27728,
+            "sha256": "a3f6da10763eb36657315698070d54bcb344a4667bd72915c982b1e93ca5daf3",
+            "hasAlpha": false,
+            "iccBytes": 0,
+            "exifBytes": 186
+          }
+        ]
+      },
+      "detailImage": {
+        "fill": 0.94,
+        "framing": {
+          "left": 0.264,
+          "top": 0.06,
+          "width": 0.484,
+          "height": 0.832,
+          "anchorX": 0.5062,
+          "anchorY": 0.9784
+        },
+        "maskSrc": "/images/perfumes/masks-v2/hawas-malibu.svg",
+        "outputs": [
+          {
+            "path": "/images/perfumes/hawas-malibu-detail-v1-640.webp",
+            "width": 640,
+            "height": 640,
+            "bytes": 27728,
+            "sha256": "a3f6da10763eb36657315698070d54bcb344a4667bd72915c982b1e93ca5daf3",
+            "hasAlpha": false,
+            "iccBytes": 0,
+            "exifBytes": 186
+          },
+          {
+            "path": "/images/perfumes/hawas-malibu-detail-v1-960.webp",
+            "width": 960,
+            "height": 960,
+            "bytes": 51010,
+            "sha256": "323abda280dad70317350d3957f9fe80bc27200529ea7738d3b9367e80b60bf2",
+            "hasAlpha": false,
+            "iccBytes": 0,
+            "exifBytes": 186
+          },
+          {
+            "path": "/images/perfumes/hawas-malibu-detail-v1-1000.webp",
+            "width": 1000,
+            "height": 1000,
+            "bytes": 50050,
+            "sha256": "9102aa47bbc4fa5b1f7f60c43182bfdc3fee94b12e75a8ad9842e372ff8e341c",
+            "hasAlpha": false,
+            "iccBytes": 0,
+            "exifBytes": 186
+          }
+        ]
+      }
+    },
+    {
+      "slug": "royale-opal",
+      "source": {
+        "path": "src/assets/perfumes/royale-opal-redbag-original-2992.jpg",
+        "width": 2992,
+        "height": 2992,
+        "sha256": "29360f4da3053b47ed0a122dfe41d8a0343448331f06512f495e76ece061a9c4",
+        "hasAlpha": false,
+        "iccBytes": 424,
+        "exifBytes": 172
+      },
+      "generalImage": {
+        "fill": 0.88,
+        "framing": {
+          "left": 0.3442513368983957,
+          "top": 0.030080213903743314,
+          "width": 0.30414438502673796,
+          "height": 0.929144385026738,
+          "anchorX": 0.5,
+          "anchorY": 0.9931654676258993
+        },
+        "maskSrc": "/images/perfumes/masks-v3/royale-opal.svg",
+        "outputs": [
+          {
+            "path": "/images/perfumes/royale-opal-general-v1-320.webp",
+            "width": 320,
+            "height": 320,
+            "bytes": 7614,
+            "sha256": "961e1b13937605710a304067c1c3f7cdccc86460511bf60cffe29986a30c48a9",
+            "hasAlpha": false,
+            "iccBytes": 424,
+            "exifBytes": 162
+          },
+          {
+            "path": "/images/perfumes/royale-opal-general-v1-640.webp",
+            "width": 640,
+            "height": 640,
+            "bytes": 21652,
+            "sha256": "2381d785f78bfdc4ce15b0852861bcba5eeb74e42aa0e703e1c748870584aed7",
+            "hasAlpha": false,
+            "iccBytes": 424,
+            "exifBytes": 162
+          }
+        ]
+      },
+      "detailImage": {
+        "fill": 0.94,
+        "framing": {
+          "left": 0.3442513368983957,
+          "top": 0.030080213903743314,
+          "width": 0.30414438502673796,
+          "height": 0.929144385026738,
+          "anchorX": 0.5,
+          "anchorY": 0.9931654676258993
+        },
+        "maskSrc": "/images/perfumes/masks-v3/royale-opal.svg",
+        "outputs": [
+          {
+            "path": "/images/perfumes/royale-opal-detail-v1-640.webp",
+            "width": 640,
+            "height": 640,
+            "bytes": 21652,
+            "sha256": "2381d785f78bfdc4ce15b0852861bcba5eeb74e42aa0e703e1c748870584aed7",
+            "hasAlpha": false,
+            "iccBytes": 424,
+            "exifBytes": 162
+          },
+          {
+            "path": "/images/perfumes/royale-opal-detail-v1-960.webp",
+            "width": 960,
+            "height": 960,
+            "bytes": 40494,
+            "sha256": "68cb148f5aa21094f3f365e36aecf090384309fbb4aebc34a955a45445fbc6de",
+            "hasAlpha": false,
+            "iccBytes": 424,
+            "exifBytes": 162
+          },
+          {
+            "path": "/images/perfumes/royale-opal-detail-v1-1440.webp",
+            "width": 1440,
+            "height": 1440,
+            "bytes": 76510,
+            "sha256": "b9e9151ea5f11f59c75bc9f2ea5fc98d5e01c0a536158169791726a500959c47",
+            "hasAlpha": false,
+            "iccBytes": 424,
+            "exifBytes": 162
+          },
+          {
+            "path": "/images/perfumes/royale-opal-detail-v1-1920.webp",
+            "width": 1920,
+            "height": 1920,
+            "bytes": 115358,
+            "sha256": "ad4723a78c0f2c3ab4c023618d2e6420e6c409ce2d545f75d6c989011dd27ddd",
+            "hasAlpha": false,
+            "iccBytes": 424,
+            "exifBytes": 162
+          },
+          {
+            "path": "/images/perfumes/royale-opal-detail-v1-2992.webp",
+            "width": 2992,
+            "height": 2992,
+            "bytes": 197652,
+            "sha256": "27cc935f3cd0291ebe70715103b20470809df994a7c792ac87d620002e918bd7",
+            "hasAlpha": false,
+            "iccBytes": 424,
+            "exifBytes": 162
+          }
+        ]
+      }
+    }
+  ]
+}

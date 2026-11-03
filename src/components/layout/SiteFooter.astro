@@ -1,0 +1,30 @@
+---
+import { site } from '../../config/site';
+import { contact } from '../../config/contact';
+import Container from '../ui/Container.astro';
+import SocialLinks from '../shared/SocialLinks.astro';
+import './site-chrome.css';
+---
+
+<footer class="site-footer">
+  <Container>
+    <div class="site-footer__main">
+      <div class="site-footer__identity">
+        <a class="site-footer__wordmark" href="/" aria-label="AROMAFIA, inicio" translate="no">
+          {site.name}
+        </a>
+        <p class="site-footer__slogan">{site.slogan}</p>
+      </div>
+      <div class="site-footer__networks">
+        <p class="site-footer__invitation">También nos encuentras por aquí.</p>
+        <SocialLinks />
+      </div>
+    </div>
+    <div class="site-footer__colophon">
+      <p>Perfumes originales en Perú.</p>
+      <a href={contact.whatsapp.href} rel="noopener noreferrer">
+        WhatsApp <span class="site-footer__phone">{contact.whatsapp.displayNumber}</span>
+      </a>
+    </div>
+  </Container>
+</footer>

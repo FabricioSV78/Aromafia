@@ -1,0 +1,47 @@
+---
+import type { FragranceNotes } from '../domain/product';
+
+interface Props {
+  notes: FragranceNotes;
+  editorial?: boolean;
+}
+const { notes, editorial = false } = Astro.props;
+const groups = [
+  { label: 'Entrada', values: notes.top, icon: 'citrus' },
+  { label: 'Corazón', values: notes.heart, icon: 'flower' },
+  { label: 'Fondo', values: notes.base, icon: 'wood' },
+];
+---
+
+<section
+  class:list={['fragrance-notes', { 'fragrance-notes--editorial': editorial }]}
+  aria-label="Notas olfativas"
+  data-fragrance-notes
+>
+  <p class="perfume-section-label">{editorial ? 'Notas olfativas' : 'La composición'}</p>
+  <dl class="fragrance-notes__groups">
+    {groups.map((group) => (
+      <div>
+        {editorial && (
+          <svg
+            class="fragrance-notes__icon"
+            viewBox="0 0 40 40"
+            fill="none"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <use href={`/images/icons/catalog-symbols-v1.svg#${group.icon}`} />
+          </svg>
+        )}
+        <dt>{editorial ? `Notas de ${group.label.toLowerCase()}` : group.label}</dt>
+        <dd>
+          {group.values.length ? (
+            group.values.join(', ')
+          ) : (
+            <span class="fragrance-notes__pending">Por confirmar</span>
+          )}
+        </dd>
+      </div>
+    ))}
+  </dl>
+</section>

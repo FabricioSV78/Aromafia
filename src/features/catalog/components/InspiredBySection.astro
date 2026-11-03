@@ -1,0 +1,41 @@
+---
+import type { ProductInspiration } from '../domain/product';
+
+interface Props {
+  reference: ProductInspiration | null;
+}
+const { reference } = Astro.props;
+---
+
+{reference && (
+  <aside class="inspired-reference" data-inspired-reference aria-label="Referencia olfativa">
+    <p class="inspired-reference__label">
+      {reference.relation === 'inspired_by' ? 'Inspirado en' : 'Alternativa olfativa a'}
+    </p>
+    <div class="inspired-reference__product">
+      {reference.image && (
+        <img
+          data-inspiration-image
+          src={reference.image.src}
+          alt={reference.image.alt}
+          width={reference.image.width}
+          height={reference.image.height}
+          srcset={reference.image.srcSet}
+          sizes="(min-width:56rem) and (max-height:800px) 124px, (min-width:56rem) 158px, 150px"
+          loading="lazy"
+          decoding="async"
+        />
+      )}
+      <div>
+        {reference.brand && (
+          <p class="inspired-reference__brand" translate="no">
+            {reference.brand}
+          </p>
+        )}
+        <p class="inspired-reference__name" translate="no">
+          {reference.name}
+        </p>
+      </div>
+    </div>
+  </aside>
+)}

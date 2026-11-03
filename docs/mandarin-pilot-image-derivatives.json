@@ -1,0 +1,38 @@
+{
+  "checkedOn": "2026-11-03",
+  "purpose": "Mandarin Sky visual pilot only: larger real manufacturer packshot, full framing on warm CSS paper; no advertising reference embedded.",
+  "sourcePage": "https://armaf.com/products/odyssey-mega-for-men",
+  "sourceUrl": "https://armaf.com/cdn/shop/files/2_e461b15f-369b-4c2e-a31f-6ff6e7396fbe-ezgif.com-webp-to-jpg-converter.jpg?v=1757611754&width=900",
+  "source": "src/assets/perfumes/mandarin-sky-editorial-official.jpg",
+  "sourceWidth": 900,
+  "sourceHeight": 900,
+  "sourceBytes": 63396,
+  "sourceSha256": "f0ba2e35be696697a66368c5546a9e5d1fc96351933c42c231ecc3af1905a8e1",
+  "format": "WebP",
+  "quality": 94,
+  "treatment": "Resize and encode only; preserve full original framing, bottle, label, colors and photographed shadow. No crop, AI generation, background removal or enlargement. CSS may blend white with the warm paper.",
+  "rightsNote": "Public manufacturer product-gallery source; provenance verified. No independent commercial reuse license established by this research.",
+  "outputs": [
+    {
+      "path": "/images/perfumes/mandarine-pilot-320.webp",
+      "width": 320,
+      "height": 320,
+      "bytes": 8644,
+      "sha256": "70afa2fc450db988f59db74fd22473233bf8a1bcee8064dc9efb190f66ce5925"
+    },
+    {
+      "path": "/images/perfumes/mandarine-pilot-640.webp",
+      "width": 640,
+      "height": 640,
+      "bytes": 36832,
+      "sha256": "f13a8d864231c343f19699501c37490feb873c80a54eacfedc9bdd2f76d47402"
+    },
+    {
+      "path": "/images/perfumes/mandarine-pilot-900.webp",
+      "width": 900,
+      "height": 900,
+      "bytes": 71412,
+      "sha256": "5252e315cb94c4a9e86b129c7c479dcc6567af37f3c18697677b5f7853fe1425"
+    }
+  ]
+}

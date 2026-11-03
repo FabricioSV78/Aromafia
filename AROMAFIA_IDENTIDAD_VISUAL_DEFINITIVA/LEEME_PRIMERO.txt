@@ -1,0 +1,27 @@
+AROMAFIA - KIT COMPLETO DE IDENTIDAD VISUAL
+
+01. 00_LOGO_OFICIAL_APROBADO: logo exacto aprobado sin alteraciones, PNG original 1254 x 1254.
+02. 01_LOGOS_PRINCIPALES: vertical clara.
+03. 02_LOGOS_HORIZONTALES: claro y oscuro, 2172 x 724.
+04. 03_LOGOS_TIPOGRAFICOS: nombre con montanas de Machu Picchu en la segunda A; con eslogan, sin eslogan, PNG transparentes, crema y oscuro.
+05. 04_ISOTIPO_LLAMA: mascota sola con fondos claro, oscuro y transparente.
+06. 05_ISOTIPO_A_MONTANA: monograma, claro, oscuro y transparente.
+07. 06_MONOCROMATICOS: fondos claro y oscuro.
+08. 07_SELLOS_CIRCULARES_CENTRADOS: versiones con logo y solo llamita, en claro/oscuro; con esquinas transparentes o fondos cuadrados. Mascota alineada al centro.
+09. 08_REDES_SOCIALES: perfiles listos 1024 y 2048px, variantes clara y oscura.
+10. 09_FAVICONS_WEB: PNG 16,32,48,64,128,256,512 + archivo favicon.ico.
+11. 10_VISTAS_PREVIAS: mosaico para elegir facilmente.
+
+CALIDAD
+- Los archivos originales se preservan a su resolucion NATIVA, sin reescalados artificiales.
+- Las versiones de mayor lienzo estan compuestas a partir de elementos existentes; el numero de pixeles del lienzo no equivale a detalle vectorial extra.
+- PNG utiliza compresion sin perdida; se evitan JPG donde se requiere transparencia.
+- Para impresiones grandes, se recomienda vectorizar manualmente el logotipo maestro.
+- Para avatar en redes usar sello con solo llamita (legible al reducirse), no el logo con eslogan.
+
+
+ACTUALIZACIÓN DEFINITIVA — SELLOS CIRCULARES
+- En todos los sellos circulares que contienen el nombre AROMAFIA, la palabra y el eslogan están COMPLETAMENTE dentro del borde dorado.
+- La llamita conserva su posición centrada.
+- Los perfiles derivados de esos sellos también están actualizados.
+- Para uso a tamaños muy pequeños, se recomienda la versión circular que contiene solo la llamita.

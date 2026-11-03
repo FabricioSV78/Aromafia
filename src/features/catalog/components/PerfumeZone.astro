@@ -1,0 +1,61 @@
+---
+import type { CatalogProduct } from '../domain/product';
+import { getVariantPriceDisplay } from '../domain/variant-price';
+import ProductPrice from './ProductPrice.astro';
+import PerfumeReading from './PerfumeReading.astro';
+import ProductHero from './ProductHero.astro';
+
+interface Props {
+  product: CatalogProduct;
+  at: Date;
+  folio: number;
+}
+const { product, at, folio } = Astro.props;
+const variant = product.variants[0];
+const price = variant
+  ? getVariantPriceDisplay(variant, at)
+  : { currentPrice: null, regularPrice: null, isOffer: false };
+---
+
+<article
+  class="perfume-zone perfume-zone--editorial"
+  id={`perfume-${product.slug}`}
+  data-product-slug={product.slug}
+  data-editorial-detail
+  aria-labelledby={`nombre-${product.slug}`}
+>
+  <div class="perfume-reading-paper" data-reading-paper aria-hidden="true"></div>
+  <a
+    class="perfume-zone__trigger"
+    href={`/#libro/${folio}/perfume/${product.slug}`}
+    data-product-link
+    aria-label={`Explorar ${product.displayName}`}
+  ></a>
+  <div class="perfume-zone__open">
+    <ProductHero
+      generalImage={product.generalImage}
+      detailImage={product.detailImage}
+      productName={product.displayName}
+    />
+    <div class="perfume-zone__copy">
+      <div class="perfume-zone__heading">
+        <p class="perfume-zone__brand">{product.brand?.name ?? 'Marca por confirmar'}</p>
+        <h4 id={`nombre-${product.slug}`} translate="no">
+          {product.displayName}
+        </h4>
+      </div>
+      <p class="perfume-zone__description">
+        {product.shortDescription ?? 'Descripción por confirmar'}
+      </p>
+      <div class="perfume-zone__purchase">
+        <ProductPrice price={price} marketReference={variant?.marketReference} />
+        <div class="perfume-zone__explore">
+          <span class="perfume-zone__overview-cue">
+            Explorar <span aria-hidden="true">↗</span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <PerfumeReading product={product} />
+  </div>
+</article>

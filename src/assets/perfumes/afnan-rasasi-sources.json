@@ -1,0 +1,61 @@
+{
+  "checkedOn": "2026-11-02",
+  "note": "Original product photographs from brand pages; reference presentations, not evidence of Aromafia stock or variant capacity. No image edits.",
+  "sources": [
+    {
+      "slug": "9pm",
+      "file": "afnan-9pm-official.jpg",
+      "page": "https://us.afnan.com/products/9-pm",
+      "url": "https://us.afnan.com/cdn/shop/files/9PM-Product-01_ac1d61da-68bc-4cf8-8086-8cdc3accfbdf.jpg?v=1775552887&width=1080",
+      "width": 1080,
+      "height": 1080,
+      "format": "jpeg",
+      "bytes": 31928,
+      "sha256": "ab8ea774c30b99a1278e666e9941479c79c7f3c838baa4c75412881ffb3e9d11"
+    },
+    {
+      "slug": "hawas-ice",
+      "file": "rasasi-hawas-ice-official.jpg",
+      "page": "https://store.rasasi.com.sa/en/aeezlxd/p330366857",
+      "url": "https://cdn.salla.sa/lGDEen/98b604b4-4639-4b79-90be-1f3030363c9e-1000x1000-MUucHhAFAxFsEco50YIM2Z309JBIF7Xg7FinLJJD.jpg",
+      "width": 1000,
+      "height": 1000,
+      "format": "jpeg",
+      "bytes": 23680,
+      "sha256": "6e1f184a2816e92db28c4e9103f246d930eb004668d71232e7853cd9cd42b1e8"
+    },
+    {
+      "slug": "hawas-malibu",
+      "file": "rasasi-hawas-malibu-official.jpg",
+      "page": "https://store.rasasi.com.sa/en/bpzlndr/p533992836",
+      "url": "https://cdn.salla.sa/lGDEen/39c861ee-b539-4322-b65e-f56be0c36e25-1000x1000-JLLo13pSxcMuLSzcdLLGQPcdSMYD5E5ea5n5XZk9.jpg",
+      "width": 1000,
+      "height": 1000,
+      "format": "jpeg",
+      "bytes": 34671,
+      "sha256": "5c18ab103c395c562048912708ec6fd0359c6f02b1f69c72c2b9c9d48db3d083"
+    },
+    {
+      "slug": "hawas-ice-pack",
+      "file": "rasasi-hawas-ice-pack-official.jpg",
+      "page": "https://store.rasasi.com.sa/en/aeezlxd/p330366857",
+      "url": "https://cdn.salla.sa/lGDEen/f29ae8b0-bd92-4a0c-8c86-03297d025fe5-1000x1000-sqGDhGVIsz4dpn5RXKV60WbLrwM3rU0nLWOXSniZ.jpg",
+      "width": 1000,
+      "height": 1000,
+      "format": "jpeg",
+      "bytes": 46708,
+      "sha256": "2fd7734d2f666942a5bcc7c413c8bbdaec910002e274e9af26c83191273b658e"
+    },
+    {
+      "slug": "hawas-malibu-pack",
+      "file": "rasasi-hawas-malibu-pack-official.jpg",
+      "page": "https://store.rasasi.com.sa/en/bpzlndr/p533992836",
+      "url": "https://cdn.salla.sa/lGDEen/c7cdb741-95cf-492d-80e8-90f9d5c8fbc3-1000x1000-KClwy1NJIXJjDgHfk50zQRB4jPedv8n7Qdm0xG7c.jpg",
+      "width": 1000,
+      "height": 1000,
+      "format": "jpeg",
+      "bytes": 46674,
+      "sha256": "a1f8bde7c5a165fc4a64fe357834620f8366c06020414ef4f6ac8fe3263efbdf"
+    }
+  ]
+}

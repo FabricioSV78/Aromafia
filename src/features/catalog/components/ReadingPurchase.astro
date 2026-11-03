@@ -1,0 +1,30 @@
+---
+import { contact } from '../../../config/contact';
+
+interface Props {
+  productName: string;
+}
+const { productName } = Astro.props;
+---
+
+<div class="perfume-reading__purchase">
+  <button
+    type="button"
+    class="perfume-reading__cta"
+    data-order-open
+    hidden
+    aria-label={`Comprar ${productName}`}
+  >
+    Comprar <span aria-hidden="true">↗</span>
+  </button>
+  <a
+    class="perfume-reading__cta"
+    data-order-fallback
+    href={contact.whatsapp.href}
+    rel="noopener noreferrer"
+    aria-label={`Comprar ${productName} por WhatsApp`}
+  >
+    Comprar <span aria-hidden="true">↗</span>
+  </a>
+  <p class="perfume-reading__order-note">Coordina la entrega por WhatsApp.</p>
+</div>

@@ -1,0 +1,68 @@
+{
+  "auditedAt": "2026-11-02",
+  "previousInventory": [
+    {
+      "scope": "user",
+      "names": [
+        "agents-sdk",
+        "basin",
+        "cf-cli",
+        "cloudflare",
+        "cloudflare-email-service",
+        "cloudflare-one",
+        "cloudflare-one-migrations",
+        "durable-objects",
+        "gateway-workers",
+        "k2",
+        "nextjs-on-cloudflare",
+        "sandbox-migrate-to-next",
+        "sandbox-next",
+        "sandbox-sdk",
+        "sandbox-stable",
+        "turnstile-spin",
+        "web-perf",
+        "workers-best-practices",
+        "workers-profiling",
+        "wrangler"
+      ]
+    },
+    {
+      "scope": "system",
+      "names": ["imagegen", "openai-docs", "review-agent", "skill-creator", "skill-installer"]
+    }
+  ],
+  "skills": [
+    {
+      "name": "vercel-react-best-practices",
+      "repo": "vercel-labs/agent-skills",
+      "path": "skills/react-best-practices",
+      "revision": "063bee94c3f4df8453406c830b0a7df0f2860278",
+      "localPath": ".agents/skills/vercel-react-best-practices",
+      "skillSha256": "71ed7794962fa6e803ee83030517b5b93a9f70fbfeb431ec4535c5480a8d8355"
+    },
+    {
+      "name": "web-design-guidelines",
+      "repo": "vercel-labs/agent-skills",
+      "path": "skills/web-design-guidelines",
+      "revision": "063bee94c3f4df8453406c830b0a7df0f2860278",
+      "localPath": ".agents/skills/web-design-guidelines",
+      "skillSha256": "f4647ca866a3accf763777f83e7682954f0187cd6bea7eea0399796652414e8f"
+    },
+    {
+      "name": "frontend-design",
+      "repo": "anthropics/skills",
+      "path": "skills/frontend-design",
+      "revision": "41bbe19d1a1a7eaab5e7bb9050a417e5c6cffc8f",
+      "localPath": ".agents/skills/frontend-design",
+      "skillSha256": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3"
+    },
+    {
+      "name": "gsap-performance",
+      "repo": "greensock/gsap-skills",
+      "path": "skills/gsap-performance",
+      "revision": "aed9cfd3277740755f6bfc1155c7aa645403b760",
+      "localPath": ".agents/skills/gsap-performance",
+      "skillSha256": "cb5408d6fba707aabcbfe3320317a14c1f8fca6070074e5261047930f50d441e"
+    }
+  ]
+}

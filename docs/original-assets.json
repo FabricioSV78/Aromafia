@@ -1,0 +1,16 @@
+{
+  "recordedAt": "2026-11-02",
+  "purpose": "Recursos aprobados existentes antes de preparar la base web; no modificar.",
+  "assets": [
+    {
+      "path": "pantalla_inicial/AROMAFIA · Animación de logo v3 (1).html",
+      "bytes": 660630,
+      "sha256": "203e2cf9c584670c636f88c66070e3d64bb91746180da6a5c6f59ee60fbfa8d2"
+    },
+    {
+      "path": "pantalla_inicial/AROMAFIA_logo_OFICIAL_original_sin_modificar_1254x1254.png",
+      "bytes": 2407572,
+      "sha256": "1b6064e09630ba8280bdaf5a7ef8e49c7e35d391f33fa316a02d722825cb9e4a"
+    }
+  ]
+}

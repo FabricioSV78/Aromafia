@@ -1,0 +1,9 @@
+{
+  "maxHtmlBytes": 57344,
+  "maxTotalJavaScriptGzipBytes": 123392,
+  "maxTotalCssGzipBytes": 20480,
+  "minLighthousePerformance": 0.9,
+  "maxLabLcpMs": 2500,
+  "maxLabCls": 0.1,
+  "maxLabTbtMs": 200
+}

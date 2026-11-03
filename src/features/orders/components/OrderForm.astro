@@ -1,0 +1,115 @@
+---
+import type { OrderProduct } from '../domain/order-request';
+import { orderLimits } from '../domain/order-request';
+
+interface Props {
+  products: readonly OrderProduct[];
+  whatsappHref: string;
+  idPrefix?: string;
+}
+const { products, whatsappHref, idPrefix = 'pedido' } = Astro.props;
+const fields = [
+  { name: 'name', label: 'Nombre', autocomplete: 'name', max: orderLimits.name },
+  { name: 'phone', label: 'Teléfono', autocomplete: 'tel', max: orderLimits.phone },
+  { name: 'city', label: 'Ciudad', autocomplete: 'address-level2', max: orderLimits.city },
+] as const;
+---
+
+<section
+  class="order-sheet"
+  data-order-root
+  data-whatsapp-href={whatsappHref}
+  aria-labelledby={`${idPrefix}-title`}
+>
+  <header class="order-sheet__header">
+    <div>
+      <h2 id={`${idPrefix}-title`} tabindex="-1" autofocus>
+        Tu compra
+      </h2>
+    </div>
+    <button type="button" data-order-close class="order-sheet__back">
+      Cerrar <span aria-hidden="true">×</span>
+    </button>
+  </header>
+  <form data-order-form class="order-form" aria-describedby={`${idPrefix}-notice`} hidden>
+    <div class="order-form__fields">
+      {fields.map((field) => (
+        <div class="order-form__field">
+          <label for={`${idPrefix}-${field.name}`}>{field.label}</label>
+          <input
+            id={`${idPrefix}-${field.name}`}
+            name={field.name}
+            type={field.name === 'phone' ? 'tel' : 'text'}
+            inputmode={field.name === 'phone' ? 'tel' : undefined}
+            autocomplete={field.autocomplete}
+            maxlength={field.max}
+            required
+            aria-describedby={`${idPrefix}-${field.name}-error`}
+          />
+          <p
+            id={`${idPrefix}-${field.name}-error`}
+            data-order-error={field.name}
+            class="order-form__error"
+            hidden
+          ></p>
+        </div>
+      ))}
+      <div class="order-form__field">
+        <label for={`${idPrefix}-product`}>Perfume</label>
+        <select
+          id={`${idPrefix}-product`}
+          name="productSlug"
+          required
+          aria-describedby={`${idPrefix}-product-error`}
+        >
+          <option value="">Elige tu perfume</option>
+          {products.map((product) => (
+            <option value={product.slug}>{product.displayName}</option>
+          ))}
+        </select>
+        <p
+          id={`${idPrefix}-product-error`}
+          data-order-error="productSlug"
+          class="order-form__error"
+          hidden
+        ></p>
+      </div>
+      <div class="order-form__field order-form__comment">
+        <label for={`${idPrefix}-comment`}>
+          Comentario <span>(opcional)</span>
+        </label>
+        <textarea
+          id={`${idPrefix}-comment`}
+          name="comment"
+          rows="2"
+          maxlength={orderLimits.comment}
+          aria-describedby={`${idPrefix}-comment-error`}
+        ></textarea>
+        <p
+          id={`${idPrefix}-comment-error`}
+          data-order-error="comment"
+          class="order-form__error"
+          hidden
+        ></p>
+      </div>
+    </div>
+    <footer class="order-form__footer">
+      <p id={`${idPrefix}-notice`}>
+        Al continuar, estos datos se incluirán en WhatsApp. Allí podrás revisar y enviar el mensaje.
+      </p>
+      <button type="submit" class="order-form__submit">
+        Continuar en WhatsApp <span aria-hidden="true">↗</span>
+      </button>
+      <p data-order-status role="status" aria-live="polite" class="order-form__status"></p>
+    </footer>
+  </form>
+  <noscript>
+    <p class="order-sheet__fallback">
+      Puedes consultar el perfume directamente en{' '}
+      <a href={whatsappHref} rel="noopener noreferrer">
+        WhatsApp
+      </a>
+      .
+    </p>
+  </noscript>
+</section>

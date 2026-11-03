@@ -1,0 +1,36 @@
+---
+import type { CatalogProduct } from '../domain/product';
+import PerfumeZone from './PerfumeZone.astro';
+
+interface Props {
+  products: readonly CatalogProduct[];
+  folio: number;
+  total: number;
+  at: Date;
+}
+const { products, folio, total, at } = Astro.props;
+const folioText = String(folio).padStart(2, '0');
+---
+
+<section
+  class="perfume-page"
+  id={`pagina-${folio}`}
+  data-book-leaf
+  data-book-leaf-kind="products"
+  aria-labelledby={`titulo-pagina-${folio}`}
+>
+  <h3 id={`titulo-pagina-${folio}`} class="sr-only" data-book-leaf-title>
+    Página {folio}
+  </h3>
+  <div class="perfume-page__running-head" aria-hidden="true">
+    <span translate="no">AROMAFIA</span>
+    <span>
+      {folioText} <span>/</span> {String(total).padStart(2, '0')}
+    </span>
+  </div>
+  <div class="perfume-page__zones">
+    {products.map((product) => (
+      <PerfumeZone product={product} at={at} folio={folio} />
+    ))}
+  </div>
+</section>

@@ -1,0 +1,2 @@
+# Preserve approved source hashes when a future Git checkout moves between Windows and Linux.
+pantalla_inicial/** -text

@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Container from '../components/ui/Container.astro';
+import SiteHeader from '../components/layout/SiteHeader.astro';
+import TrustStrip from '../components/shared/TrustStrip.astro';
+import CatalogBook from '../features/catalog/components/CatalogBook.astro';
+import BrandIntro from '../features/intro/components/BrandIntro.astro';
+import { catalogRepository } from '../features/catalog/services/catalog.server';
+import '../features/catalog/styles/catalog.css';
+import '../features/catalog/styles/book-camera.css';
+import '../features/catalog/styles/book-reading.css';
+import '../features/catalog/styles/editorial-reading.css';
+import '../features/catalog/styles/product-hero.css';
+import '../features/catalog/styles/catalog-reference.css';
+import '../features/orders/styles/order-form.css';
+
+const catalog = await catalogRepository.list({ sort: 'editorial' });
+const renderedAt = new Date();
+---
+
+<BaseLayout
+  title="AROMAFIA · Perfumes originales"
+  description="Abre el catálogo de AROMAFIA. Perfumes originales en Perú. Huele como jeque, paga como causa."
+  themeColor="#12100c"
+>
+  <Fragment slot="head">
+    <style is:inline>
+      html[data-brand-intro-pending] {
+        overflow: hidden;
+        background: #f0e8d5;
+      }
+      html[data-brand-intro-pending] body {
+        background: #f0e8d5;
+      }
+      html[data-brand-intro-pending] .book-experience,
+      html[data-brand-intro-pending] .skip-link {
+        visibility: hidden;
+      }
+    </style>
+    <script is:inline>
+      (() => {
+        if (
+          typeof window.matchMedia !== 'function' ||
+          location.hash ||
+          window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        )
+          return;
+        try {
+          if (sessionStorage.getItem('aromafia:intro:v3:seen') === '1') return;
+        } catch {
+          // The intro also works when session storage is unavailable.
+        }
+        const html = document.documentElement;
+        html.setAttribute('data-brand-intro-pending', '');
+        html.dataset.brandIntroBoot = String(
+          window.setTimeout(() => {
+            html.removeAttribute('data-brand-intro-pending');
+            delete html.dataset.brandIntroBoot;
+            const dialog = document.querySelector('[data-brand-intro]');
+            if (dialog && typeof dialog.close === 'function' && dialog.open) dialog.close();
+            dialog?.remove();
+          }, 3000),
+        );
+      })();
+    </script>
+  </Fragment>
+  <BrandIntro />
+  <div class="book-experience" data-book-root>
+    <script is:inline>
+      // Reserve the closed-book layout before first paint; release it if the module fails.
+      (() => {
+        const root = document.currentScript?.parentElement;
+        if (!(root instanceof HTMLElement) || typeof window.matchMedia !== 'function') return;
+        root.classList.add('is-enhanced');
+        root.dataset.bookMode = 'closed';
+        root.dataset.bookBoot = String(
+          window.setTimeout(() => {
+            if (root.dataset.bookPhase) return;
+            root.classList.remove('is-enhanced');
+            root.removeAttribute('data-book-mode');
+            root.removeAttribute('data-book-boot');
+          }, 3000),
+        );
+      })();
+    </script>
+    <SiteHeader />
+    <main id="contenido" tabindex="-1" class="book-workspace">
+      <CatalogBook products={catalog.items} at={renderedAt} />
+    </main>
+    <footer class="book-footer" id="contacto">
+      <Container>
+        <TrustStrip />
+      </Container>
+    </footer>
+  </div>
+</BaseLayout>
+<script>
+  import { initializeBook } from '../motion/book-scene';
+  import { initializeBrandIntro } from '../features/intro/brand-intro';
+  document.querySelectorAll<HTMLDialogElement>('[data-brand-intro]').forEach(initializeBrandIntro);
+  document
+    .querySelectorAll<HTMLElement>('[data-book-root]')
+    .forEach((root) => initializeBook(root));
+</script>

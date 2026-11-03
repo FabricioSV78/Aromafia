@@ -1,0 +1,14 @@
+{
+  "resultado": "CORRECTO",
+  "archivos_png_verificados": 52,
+  "archivos_con_errores": [],
+  "logo_original_aprobado_sin_modificaciones": true,
+  "circular_transparente_esquinas_transparentes": true,
+  "titulo_ancho_maximo_antes": 1530,
+  "titulo_ancho_maximo_ahora": 1345,
+  "perfiles_actualizados": [
+    "claro",
+    "oscuro"
+  ],
+  "nota": "PNG comprimidos sin pérdida. No se atribuye detalle vectorial a archivos ráster."
+}

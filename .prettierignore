@@ -1,0 +1,15 @@
+node_modules/
+.astro/
+dist/
+artifacts/
+.cache/
+.agents/
+coverage/
+playwright-report/
+test-results/
+reports/
+package-lock.json
+AROMAFIA*.html
+AROMAFIA*.png
+AROMAFIA_IDENTIDAD_VISUAL_DEFINITIVA/
+

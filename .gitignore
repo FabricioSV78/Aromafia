@@ -1,0 +1,17 @@
+node_modules/
+.astro/
+dist/
+artifacts/
+.cache/
+coverage/
+playwright-report/
+test-results/
+reports/
+.env
+.env.*
+!.env.example
+*.local
+*.log
+.DS_Store
+Thumbs.db
+

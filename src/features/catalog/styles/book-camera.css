@@ -1,0 +1,81 @@
+@layer components {
+  .book-camera {
+    position: relative;
+    width: min(100%, 1180px);
+  }
+  .is-enhanced .book-camera {
+    height: min(100%, 680px);
+    transform-origin: 0 0;
+    transform-style: preserve-3d;
+  }
+  .is-enhanced .book-camera .book-scene {
+    width: 100%;
+    height: 100%;
+  }
+  .is-enhanced .perfume-zone {
+    transition: opacity 360ms ease;
+  }
+  .is-enhanced[data-book-focus='true'] .perfume-zone:not(.is-selected) {
+    opacity: 0.12;
+  }
+  .is-enhanced .perfume-zone.is-selected .perfume-zone__open {
+    background: transparent;
+  }
+  .book-focus-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-height: 48px;
+    width: min(100%, 1180px);
+    margin-inline: auto;
+    color: #f4ebd6;
+    font-size: 0.75rem;
+  }
+  .book-focus-controls button {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    color: inherit;
+    padding: 0.5rem 0.75rem;
+  }
+  .book-focus-return {
+    border: 1px solid #8d7b54;
+    background: transparent;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .book-focus-return:hover {
+    background: #ffffff0b;
+  }
+  .book-focus-controls p {
+    min-width: 0;
+    margin-left: auto;
+    padding-inline: 0.75rem;
+    text-align: right;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+  @media (max-width: 55.999rem) {
+    .book-camera {
+      width: min(100%, 460px);
+    }
+    .book-focus-controls {
+      gap: 0.25rem;
+      font-size: 0.6875rem;
+    }
+    .book-focus-controls button {
+      padding-inline: 0.5rem;
+    }
+    .book-focus-controls p {
+      font-size: 0.875rem;
+      padding-inline: 0 0.5rem;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .is-enhanced .perfume-zone {
+      transition: none;
+    }
+  }
+}

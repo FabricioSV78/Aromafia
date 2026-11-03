@@ -1,0 +1,953 @@
+@layer components {
+  .book-experience {
+    --book-paper: #f5efdf;
+    --book-ink: #171610;
+    --book-gold: #d2b477;
+    --book-line: #c9bfa8;
+    background: #161713;
+    color: #f4ebd6;
+    isolation: isolate;
+    min-height: 100svh;
+  }
+  .book-experience [hidden] {
+    display: none !important;
+  }
+  .book-experience.is-enhanced {
+    height: 100svh;
+    min-height: 560px;
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+  }
+  .book-experience .site-header {
+    position: relative;
+    z-index: 10;
+    border-color: #ffffff26;
+    background: #161713;
+  }
+  .book-experience .site-header__inner {
+    min-height: 4rem;
+  }
+  .book-experience .site-header__wordmark {
+    font-weight: 400;
+    color: #f4ebd6;
+    letter-spacing: -0.04em;
+  }
+  .book-experience .site-header__navigation a {
+    color: #e7dfcc;
+  }
+  .book-experience .site-header__contact {
+    color: #f4ebd6;
+    border-color: #8d7b54;
+    font-weight: 400;
+  }
+  .book-experience .site-header__contact:hover {
+    color: #171610;
+    background: var(--book-gold);
+  }
+  .book-experience :focus-visible {
+    outline-color: #efc879;
+  }
+  .book-workspace {
+    padding: 0.75rem clamp(0.75rem, 3vw, 3rem) 0.5rem;
+    position: relative;
+  }
+  .is-enhanced .book-workspace {
+    min-width: 0;
+    min-height: 0;
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
+  }
+  .book-viewport {
+    position: relative;
+    display: grid;
+    place-items: center;
+    padding: 0.875rem 0.875rem;
+  }
+  .is-enhanced .book-viewport {
+    min-width: 0;
+    min-height: 0;
+    perspective: 8000px;
+    overflow: clip;
+  }
+  .book-scene {
+    position: relative;
+    width: min(100%, 1180px);
+  }
+  .is-enhanced .book-scene {
+    height: min(100%, 680px);
+    transform-style: preserve-3d;
+    touch-action: pan-y pinch-zoom;
+  }
+  .book-volume {
+    position: relative;
+    width: 100%;
+  }
+  .is-enhanced .book-volume {
+    --book-stack-scale: 0.5;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: translateX(-25%);
+  }
+  .is-enhanced .book-volume::before {
+    content: '';
+    position: absolute;
+    inset: 5px -5px -6px 5px;
+    background: repeating-linear-gradient(0deg, #c5b89d 0 1px, #e4d8bf 1px 3px);
+    border-radius: 2px 5px 5px 2px;
+    transform: translateZ(-9px) scaleX(var(--book-stack-scale));
+    transform-origin: right center;
+    box-shadow:
+      4px 5px 0 #6d5940,
+      0 25px 45px #0007;
+    pointer-events: none;
+  }
+  .book-pages {
+    display: grid;
+    gap: 1rem;
+    color: var(--book-ink);
+    margin-top: 1rem;
+  }
+  .is-enhanced .book-pages {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    display: block;
+    transform-style: preserve-3d;
+    background: var(--book-paper);
+    border-radius: 2px 5px 5px 2px;
+    opacity: 0;
+  }
+  .is-enhanced[data-book-mode='open'] .book-volume {
+    --book-stack-scale: 1;
+    transform: none;
+  }
+  .is-enhanced[data-book-mode='open'] .book-pages {
+    opacity: 1;
+  }
+  .is-enhanced .book-pages::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2rem;
+    transform: translateX(-50%);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      #473c1e0d 40%,
+      #82724b55 50%,
+      #473c1e0a 60%,
+      transparent
+    );
+    pointer-events: none;
+    z-index: 5;
+  }
+  .book-cover {
+    position: relative;
+    width: min(100%, 440px);
+    margin: 2rem auto;
+    color: var(--book-ink);
+    order: -1;
+  }
+  .book-volume {
+    display: flex;
+    flex-direction: column;
+  }
+  .is-enhanced .book-cover {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    margin: 0;
+    transform-origin: 0 50%;
+    transform-style: preserve-3d;
+    z-index: 30;
+  }
+  .book-cover__front,
+  .book-cover__back {
+    position: relative;
+    background: #f0e8d5;
+    border: 1px solid #b4a17b;
+    box-shadow:
+      inset 9px 0 12px -8px #473015cc,
+      inset -1px 0 3px #fff9;
+    border-radius: 1px 5px 5px 1px;
+  }
+  .book-cover__front,
+  .book-endpaper {
+    background: radial-gradient(ellipse at 46% 38%, #f1e8d6, #eee5d3 64%, #ece2cf);
+  }
+  .is-enhanced .book-cover__front,
+  .is-enhanced .book-cover__back {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    overflow: hidden;
+  }
+  .is-enhanced .book-cover__front {
+    transform: translateZ(1px);
+  }
+  .book-cover__frame {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: clamp(1rem, 2.5vw, 2rem) clamp(1.25rem, 3vw, 2.5rem);
+    position: relative;
+  }
+  .book-cover__frame::before {
+    content: '';
+    position: absolute;
+    inset: 0.65rem 0.65rem 0.65rem 1rem;
+    border: 1px solid #b7924f91;
+    pointer-events: none;
+  }
+  .book-cover__running {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    color: #655437;
+    font-size: 0.6875rem;
+    z-index: 1;
+  }
+  .book-cover__art {
+    width: min(100%, 520px);
+    margin: 0.5rem auto;
+  }
+  .book-cover__art .brand-mark,
+  .book-endpaper__art .brand-mark {
+    width: 100%;
+    height: auto;
+    /* Only the blank outer margin fades; the official artwork remains sharp and intact. */
+    mask-image:
+      linear-gradient(to right, transparent, #000 6%, #000 94%, transparent),
+      linear-gradient(to bottom, transparent, #000 6%, #000 94%, transparent);
+    mask-composite: intersect;
+  }
+  .is-enhanced .book-cover__frame {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr) auto auto;
+    align-items: stretch;
+    justify-content: stretch;
+    gap: 0.5rem;
+    padding: clamp(1rem, 2.2vw, 1.5rem);
+  }
+  .is-enhanced .book-cover__art,
+  .is-enhanced .book-endpaper__art {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    container-type: size;
+  }
+  .is-enhanced .book-cover__art .brand-mark,
+  .is-enhanced .book-endpaper__art .brand-mark {
+    width: min(100cqw, 100cqh);
+    height: auto;
+  }
+  .book-cover__invitation {
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: clamp(0.875rem, 1.3vw, 1.15rem);
+    color: #51442f;
+    margin-bottom: 0.5rem;
+  }
+  .book-open {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 3rem;
+    background: #191b16;
+    color: #f8efd9;
+    border: 1px solid #191b16;
+    padding: 0.65rem 1rem;
+    text-decoration: none;
+    font-size: 0.875rem;
+    position: relative;
+    z-index: 1;
+    transition: background-color 160ms;
+  }
+  .book-open:hover {
+    color: #fff6df;
+    background: #443922;
+  }
+  .book-cover__spine {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -11px;
+    width: 12px;
+    background: linear-gradient(90deg, #725d35, #d4b371 55%, #5e4928);
+    transform: rotateY(-90deg);
+    transform-origin: right center;
+  }
+  .is-enhanced .book-cover__spine {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  }
+  .book-cover__spine span {
+    writing-mode: vertical-rl;
+    color: #eee2bd;
+    font-family: var(--font-display);
+    font-size: 0.6875rem;
+    letter-spacing: 0.14em;
+  }
+  .book-cover__shine {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg, transparent 25%, #fff5 48%, transparent 70%);
+    opacity: 0;
+    pointer-events: none;
+  }
+  .book-cover__back {
+    display: none;
+  }
+  .is-enhanced .book-cover__back {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg) translateZ(1px);
+    visibility: hidden;
+    background: #dfd1b7;
+    border-radius: 5px 1px 1px 5px;
+  }
+  .book-cover__back > span:first-child {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2.8rem);
+    color: #6d5631;
+  }
+  .book-cover__back p {
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: #594d37;
+    margin-top: 1rem;
+  }
+  .book-cover__seal {
+    font-size: 0.6875rem;
+    margin-top: 3rem;
+    color: #6d5631;
+  }
+  .book-closed-note {
+    text-align: center;
+    color: #c3b89d;
+    font-family: var(--font-display);
+    font-size: 0.875rem;
+    margin: 0.25rem 0 0.5rem;
+    max-width: none;
+    width: 100%;
+  }
+  .book-closed-note span {
+    margin-left: 0.4rem;
+    color: #9e998a;
+    font-family: var(--font-body);
+    font-size: 0.6875rem;
+  }
+  .is-enhanced .book-closed-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3rem;
+    margin: 0;
+  }
+  .is-enhanced[data-book-mode='open'] .book-closed-note {
+    display: none;
+  }
+  .is-enhanced[data-book-mode='closed'] .book-controls {
+    display: none;
+  }
+  .book-controls {
+    display: grid;
+    grid-template-columns: auto minmax(80px, 1fr) auto auto;
+    align-items: center;
+    gap: 1.5rem;
+    width: min(100%, 1180px);
+    margin-inline: auto;
+    min-height: 3rem;
+  }
+  .book-control {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    min-height: 44px;
+    min-width: 44px;
+    background: transparent;
+    border: 0;
+    color: #ede3ca;
+    padding: 0.5rem;
+    cursor: pointer;
+    font-size: 0.75rem;
+  }
+  .book-control:hover:not(:disabled) {
+    color: #ffda8d;
+    background: #ffffff09;
+  }
+  .book-control:disabled {
+    color: #908a7b;
+    cursor: default;
+  }
+  .book-control > span[aria-hidden] {
+    font-size: 1.35rem;
+    line-height: 1;
+  }
+  .book-control--close {
+    border-left: 1px solid #ffffff30;
+    padding-left: 1rem;
+  }
+  .book-controls__position {
+    min-width: 0;
+    text-align: center;
+  }
+  .book-controls output {
+    display: block;
+    font-size: 0.6875rem;
+    color: #ddd2b9;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .book-progress {
+    height: 1px;
+    background: #ffffff26;
+    margin: 0.5rem auto;
+    max-width: 220px;
+  }
+  .book-progress span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #d2b477;
+    transform-origin: left;
+    transform: scaleX(0.1667);
+  }
+  .perfume-page {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 1.5rem;
+    background: var(--book-paper);
+    color: var(--book-ink);
+    border: 1px solid #c9bfa8;
+  }
+  .is-enhanced .perfume-page {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 50%;
+    height: 100%;
+    min-height: 0;
+    border: 0;
+    overflow: auto;
+    scrollbar-width: thin;
+    padding: clamp(1rem, 2vw, 1.6rem) clamp(1rem, 2.5vw, 2rem);
+  }
+  .is-enhanced .perfume-page.is-right {
+    left: 50%;
+  }
+  .perfume-page__running-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.625rem;
+    letter-spacing: 0.06em;
+    color: #6c604a;
+  }
+  .perfume-page__running-head > span:last-child {
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0;
+  }
+  .perfume-page__running-head > span:last-child > span {
+    margin-inline: 0.4rem;
+    color: #80673d;
+  }
+  .perfume-page__zones {
+    display: grid;
+    grid-template-rows: repeat(2, minmax(9.25rem, 1fr));
+    flex: 1;
+    min-height: 0;
+    margin-top: 0.75rem;
+  }
+  .perfume-zone {
+    min-width: 0;
+    min-height: 0;
+    padding-block: 0.8rem;
+    display: flex;
+  }
+  .perfume-zone + .perfume-zone {
+    border-top: 1px solid var(--book-line);
+  }
+  .perfume-zone__open {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    align-items: stretch;
+    gap: clamp(0.75rem, 1.4vw, 1.25rem);
+    flex: 1;
+    min-height: 44px;
+    min-width: 0;
+    color: var(--book-ink);
+    text-decoration: none;
+  }
+  .perfume-zone__open:hover {
+    color: var(--book-ink);
+  }
+  .perfume-zone__open:focus-visible {
+    outline: 2px solid #6e501e;
+    outline-offset: 4px;
+  }
+  .perfume-zone__visual {
+    display: grid;
+    place-items: center;
+    position: relative;
+    min-width: 0;
+    min-height: 100%;
+    background: #e7ddc8;
+  }
+  .perfume-placeholder {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1rem 0.6rem;
+    text-align: center;
+  }
+  .perfume-placeholder::after {
+    content: '';
+    position: absolute;
+    inset: 7px;
+    border: 1px solid #bcab8970;
+    pointer-events: none;
+  }
+  .perfume-placeholder__word {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 2.5vw, 2.7rem);
+    font-style: italic;
+    color: #786441;
+    line-height: 1.05;
+    letter-spacing: -0.05em;
+    overflow-wrap: anywhere;
+    max-width: 9ch;
+  }
+  .perfume-placeholder__caption {
+    margin-top: 0.75rem;
+    max-width: 14ch;
+    color: #62553d;
+    font-size: 0.625rem;
+    line-height: 1.4;
+    position: relative;
+    z-index: 1;
+  }
+  .perfume-zone__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    inset: 0;
+  }
+  .perfume-zone__copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.75rem;
+    min-width: 0;
+  }
+  .perfume-zone h4 {
+    font-family: var(--font-display);
+    font-size: clamp(1.4rem, 2.2vw, 2.1rem);
+    font-weight: 400;
+    letter-spacing: -0.045em;
+    line-height: 1.05;
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+  .perfume-zone__brand {
+    color: #5a513f;
+    font-size: 0.625rem;
+    line-height: 1.3;
+    margin-bottom: 0.4rem;
+  }
+  .perfume-zone__description {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    margin-top: 0.5rem;
+    font-size: 0.6875rem;
+    line-height: 1.4;
+    color: #62553d;
+  }
+  .perfume-zone__purchase {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .product-price__values {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: baseline;
+    flex-wrap: wrap;
+  }
+  .product-price__current {
+    font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+    font-variant-numeric: tabular-nums;
+  }
+  .product-price__previous {
+    color: #625a4a;
+    font-size: 0.8rem;
+  }
+  .perfume-zone__explore {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-bottom: 1px solid #8e7a55;
+    padding-bottom: 0.2rem;
+    font-size: 0.6875rem;
+    line-height: 1.3;
+    color: #443a26;
+  }
+  .perfume-zone__open:hover .perfume-zone__explore {
+    color: #775019;
+    border-color: currentColor;
+  }
+  .book-endpaper {
+    background: radial-gradient(ellipse at 46% 38%, #f1e8d6, #eee5d3 64%, #ece2cf);
+  }
+  .book-endpaper__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 0;
+    flex: 1;
+    text-align: center;
+  }
+  .book-endpaper__art {
+    width: min(100%, 520px);
+    margin-block: 0.5rem;
+  }
+  .is-enhanced .book-endpaper__content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr) auto auto;
+    align-items: stretch;
+    justify-content: stretch;
+    gap: 0.5rem;
+    padding-top: 0.25rem;
+  }
+  .book-endpaper__content > p {
+    font-family: var(--font-display);
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
+    line-height: 1.2;
+    color: #443a26;
+  }
+  .book-endpaper__content > span {
+    margin-top: 0.75rem;
+    font-size: 0.6875rem;
+    color: #62553d;
+  }
+  .book-turn-layer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 20;
+    transform-style: preserve-3d;
+  }
+  .book-turn {
+    position: absolute;
+    inset: 0 auto 0 50%;
+    width: 50%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform-origin: left center;
+    pointer-events: none;
+    will-change: transform;
+  }
+  .book-turn[data-direction='previous'] {
+    left: 0;
+    transform-origin: right center;
+  }
+  .book-turn__front,
+  .book-turn__back {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    background: var(--book-paper);
+    overflow: hidden;
+    box-shadow: inset 0 0 0 1px #b9aa8840;
+  }
+  .book-turn__front {
+    transform: translateZ(0.1px);
+  }
+  .book-turn__back {
+    transform: rotateY(180deg) translateZ(0.1px);
+  }
+  .book-turn .perfume-page {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .book-turn__front::after,
+  .book-turn__back::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, #614b2312, transparent 15%, transparent 85%, #614b230d);
+    pointer-events: none;
+  }
+  .book-footer {
+    position: relative;
+    z-index: 5;
+    background: #161713;
+    padding-block: 0.25rem;
+    border-top: 1px solid #ffffff21;
+  }
+  .book-footer .trust-strip {
+    padding-block: 0.4rem;
+    border: 0;
+    gap: 0.75rem;
+  }
+  .book-footer .trust-strip li {
+    color: #d6cdb8;
+    font-size: 0.6875rem;
+    line-height: 1.3;
+    padding-inline: 0.5rem;
+  }
+  .book-footer .trust-strip li + li {
+    border-color: #ffffff24;
+  }
+  .book-footer .trust-strip svg {
+    width: 20px;
+    height: 20px;
+    color: #d2b477;
+  }
+  .book-noscript {
+    color: #e8dcc1;
+    padding-block: 1rem;
+  }
+  .book-experience:not(.is-enhanced) .book-viewport {
+    display: block;
+  }
+  .book-experience:not(.is-enhanced) .book-scene {
+    margin-inline: auto;
+  }
+  .book-experience:not(.is-enhanced) .book-volume {
+    flex-direction: column-reverse;
+  }
+  .book-experience:not(.is-enhanced) .book-pages {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .book-experience:not(.is-enhanced) .perfume-page__zones {
+    grid-template-rows: repeat(2, minmax(15rem, auto));
+  }
+  @media (max-width: 55.999rem) {
+    .book-workspace {
+      padding: 0.75rem 0.75rem 0.4rem;
+    }
+    .book-viewport {
+      padding: 0.875rem 0.5rem;
+    }
+    .book-scene {
+      width: min(100%, 460px);
+    }
+    .is-enhanced .book-volume {
+      --book-stack-scale: 1;
+      transform: none;
+    }
+    .is-enhanced .book-cover {
+      left: 0;
+      width: 100%;
+    }
+    .is-enhanced[data-book-mode='closed'] .book-volume::before {
+      left: 5px;
+    }
+    .is-enhanced .perfume-page {
+      left: 0;
+      width: 100%;
+      padding: 1rem 1.25rem;
+    }
+    .is-enhanced .perfume-page.is-right {
+      left: 0;
+    }
+    .is-enhanced .book-pages::after {
+      display: none;
+    }
+    .book-cover__frame {
+      padding: 1.1rem 1.5rem;
+    }
+    .book-open {
+      width: min(100%, 11rem);
+      justify-self: center;
+      margin-inline: auto;
+    }
+    .book-cover__invitation {
+      font-size: 0.8125rem;
+    }
+    .book-cover__running {
+      font-size: 0.625rem;
+    }
+    .perfume-placeholder__word {
+      font-size: clamp(1.35rem, 5vw, 1.9rem);
+    }
+    .perfume-zone__open {
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      gap: 0.75rem;
+    }
+    .perfume-zone h4 {
+      font-size: clamp(1.3rem, 5.2vw, 1.7rem);
+    }
+    .perfume-zone .product-price__current {
+      font-size: 1.4rem;
+    }
+    .book-turn {
+      left: 0;
+      width: 100%;
+    }
+    .book-turn-layer {
+      /* A single mobile page has no opposite spread to receive its rotating back face. */
+      overflow: clip;
+    }
+    .book-controls {
+      gap: 0.25rem;
+    }
+    .book-control {
+      gap: 0.4rem;
+      font-size: 0.6875rem;
+    }
+    .book-control--close {
+      padding-left: 0.5rem;
+    }
+    .book-control--previous > span:not([aria-hidden]),
+    .book-control--next > span:not([aria-hidden]) {
+      display: none;
+    }
+    .book-closed-note {
+      font-size: 0.75rem;
+    }
+    .book-closed-note span {
+      display: none;
+    }
+    .book-experience .site-header__inner {
+      min-height: 3.5rem;
+      padding-top: 0.4rem;
+    }
+    .book-experience .site-header__wordmark {
+      font-size: 1.25rem;
+    }
+    .book-experience .site-header__contact {
+      min-height: 44px;
+      padding: 0.3rem 0.6rem;
+      font-size: 0.75rem;
+    }
+    .book-experience .site-header__navigation {
+      margin-top: 0;
+      padding-block: 0;
+      gap: 2rem;
+      border-color: #ffffff18;
+    }
+    .book-experience .site-header__navigation a {
+      min-height: 44px;
+      font-size: 0.6875rem;
+    }
+    .book-footer .trust-strip {
+      grid-template-columns: 1fr 1.6fr 1fr;
+      gap: 0.3rem;
+      padding-block: 0.35rem;
+    }
+    .book-footer .trust-strip li {
+      gap: 0.3rem;
+      padding-inline: 0;
+      font-size: 0.5625rem;
+      align-items: flex-start;
+    }
+    .book-footer .trust-strip svg {
+      width: 14px;
+      height: 14px;
+    }
+    .book-experience:not(.is-enhanced) .book-pages {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-height: 720px) {
+    .book-cover__invitation {
+      display: none;
+    }
+    .is-enhanced .perfume-page {
+      padding-block: 0.7rem;
+    }
+    .perfume-page__zones {
+      margin-top: 0.5rem;
+    }
+    .perfume-zone {
+      padding-block: 0.5rem;
+    }
+    .perfume-zone__copy,
+    .perfume-zone__purchase {
+      gap: 0.3rem;
+    }
+    .perfume-zone h4 {
+      font-size: 1.25rem;
+    }
+    .perfume-zone__brand {
+      margin-bottom: 0.25rem;
+    }
+    .perfume-zone__description {
+      margin-top: 0.25rem;
+      font-size: 0.625rem;
+      line-height: 1.3;
+    }
+    .perfume-zone .product-price__current {
+      font-size: 1.25rem;
+    }
+    .perfume-zone__explore {
+      font-size: 0.625rem;
+    }
+    .perfume-placeholder {
+      padding: 0.5rem;
+    }
+    .perfume-placeholder__word {
+      font-size: 1.25rem;
+    }
+    .perfume-placeholder__caption {
+      font-size: 0.5625rem;
+      line-height: 1.3;
+      margin-top: 0.5rem;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .book-open {
+      transition: none;
+    }
+    .is-enhanced[data-book-mode='closed'] .book-volume {
+      transform: translateX(-25%);
+    }
+    @media (max-width: 55.999rem) {
+      .is-enhanced[data-book-mode='closed'] .book-volume {
+        transform: none;
+      }
+    }
+  }
+}

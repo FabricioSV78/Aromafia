@@ -1,0 +1,32 @@
+---
+import { contact } from '../../config/contact';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+const channels = [contact.instagram, contact.facebook, contact.tiktok, contact.whatsapp];
+---
+
+<nav class:list={['social-links', className]} aria-label="Redes sociales">
+  <ul>
+    {channels.map((channel) => (
+      <li>
+        <a href={channel.href} rel="noopener noreferrer">
+          {channel.label}
+          <svg
+            viewBox="0 0 16 16"
+            width="14"
+            height="14"
+            fill="none"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path d="M4 12 12 4M4 4h8v8" />
+          </svg>
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>

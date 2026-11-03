@@ -1,0 +1,252 @@
+{
+  "studios": {
+    "general": {
+      "source": "src/assets/perfumes/studio/mandarin-general-background.png",
+      "inputs": [
+        {
+          "path": "public/images/perfumes/mandarine/general.webp",
+          "sha256": "40ac64e1659a7ab9de36e697f2380dcf2525cd504063e1b2ec40cc2fe86a4520",
+          "role": "edit_target"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit. Edit target: the supplied Mandarin Sky general catalog photo. Deliver ONLY its empty photographic studio background, square 1:1, high resolution. Remove the entire orange and turquoise perfume bottle, handle, all letters, ALL its cast/contact shadows and reflections. Carefully inpaint the vacated area as one seamless continuous matte warm cream-champagne/light beige studio sweep. Preserve the reference's existing background color and very subtle lighting at ALL outer edges: neutral creamy sand, NOT pink or orange, NOT bright white. Soft diffuse upper-left illumination, very gentle natural tonal variation, minimal texture, no visible horizon, no pedestal or props. Do not replace it with a new stylized scene. Do not include any products, objects, text, watermark, borders or object-shaped ghosts. This empty background will receive ORIGINAL authentic photographic bottles later; do not generate any perfume. Keep the background continuous corner to corner with no patch, banding, rectangle or seam. Same camera and same studio as the input."
+    },
+    "detail": {
+      "source": "src/assets/perfumes/studio/mandarin-detail-background.png",
+      "inputs": [
+        {
+          "path": "public/images/perfumes/mandarine/detail.webp",
+          "sha256": "a38e4e255e67cde4fd921e659ffccaf223fba57058eaae1ed7f32769255204d1",
+          "role": "edit_target"
+        },
+        {
+          "path": "public/images/perfumes/mandarine/inspiration.webp",
+          "sha256": "711660128f296a6c6bf1dbc6c6f7e672e2d953ef94713cca5b697baf31addbc4",
+          "role": "supporting_reference"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit. Input1 is the EDIT TARGET, Mandarin Sky detailed square product photo. Input2 is supporting reference of the same photographic studio and lighting. Produce ONLY the empty studio background of input1, square 1:1 high resolution. Completely remove the bottle and orange/teal box, every letter and ALL shadows/reflections from both objects. Seamlessly inpaint the occupied area. Keep the existing pale champagne-cream/sand background hues from input1 outer edges EXACTLY, very subtle warm peach undertone as in the reference, not saturated pink, not orange, not white. Preserve the same soft diffuse studio sweep, gentle upper-left illumination and low contrast. Flat floor sweeps seamlessly into backdrop without a visible horizon. No pedestal, stand, objects, bottle silhouettes, shadows, text, watermarks, border, rectangular patch or banding. Do not invent a new scene or add texture. Original authentic photographic perfumes will be composited later; generate NO products at all."
+    },
+    "inspiration": {
+      "reuse": "general"
+    }
+  },
+  "products": {
+    "9pm": {
+      "general": {
+        "source": "src/assets/perfumes/afnan-9pm-official.jpg",
+        "mask": "src/assets/perfumes/masks/masks-v2/9pm.svg",
+        "framing": {
+          "left": 0.2,
+          "top": 0.1,
+          "width": 0.5888888888888889,
+          "height": 0.8185185185185185,
+          "anchorX": 0.5275,
+          "anchorY": 0.9355
+        },
+        "fill": 0.86
+      },
+      "detail": {
+        "source": "src/assets/perfumes/detail-boxes/9pm-mustafa-pack.png",
+        "mask": "src/assets/perfumes/masks/masks-box-v1/9pm.svg",
+        "framing": {
+          "left": 0.16,
+          "top": 0.07,
+          "width": 0.68,
+          "height": 0.84,
+          "anchorX": 0.5,
+          "anchorY": 0.98
+        },
+        "fill": 0.94
+      },
+      "inspiration": {
+        "source": "src/assets/perfumes/inspirations/ultra.png",
+        "fill": 0.88,
+        "trimAlpha": true
+      }
+    },
+    "hawas-ice": {
+      "general": {
+        "source": "src/assets/perfumes/rasasi-hawas-ice-official.jpg",
+        "mask": "src/assets/perfumes/masks/masks-v2/hawas-ice.svg",
+        "framing": {
+          "left": 0.288,
+          "top": 0.104,
+          "width": 0.424,
+          "height": 0.728,
+          "anchorX": 0.5,
+          "anchorY": 0.9794
+        },
+        "fill": 0.86
+      },
+      "detail": {
+        "source": "src/assets/perfumes/detail-boxes/hawas-ice-official-pack.jpg",
+        "mask": "src/assets/perfumes/masks/masks-box-v1/hawas-ice.svg",
+        "framing": {
+          "left": 0.06,
+          "top": 0.08,
+          "width": 0.86,
+          "height": 0.86,
+          "anchorX": 0.5,
+          "anchorY": 0.85
+        },
+        "fill": 0.94
+      },
+      "inspiration": {
+        "source": "src/assets/perfumes/inspirations/invictus2.jpg",
+        "fill": 0.85,
+        "outline": {
+          "viewBox": "0 0 720 900",
+          "path": "M182 220 Q198 208 211 226 L219 251 L253 241 L253 224 Q355 201 464 223 L465 241 L503 251 L505 226 Q519 208 538 219 L546 231 L545 405 Q544 482 497 509 L490 541 Q457 626 419 670 L420 680 Q448 686 451 705 L450 736 Q449 752 427 754 L274 754 Q254 751 254 736 L255 707 Q257 687 282 682 L281 670 Q240 621 216 546 L213 515 Q169 490 171 416 L172 237 Z"
+        }
+      }
+    },
+    "mandarine": {
+      "general": {
+        "source": "src/assets/perfumes/originals/mandarine/1.png",
+        "scene": true,
+        "framing": {
+          "left": 0,
+          "top": 0.125,
+          "width": 1,
+          "height": 0.75
+        },
+        "fill": 0.9,
+        "objectBounds": {
+          "left": 0.218,
+          "top": 0.025,
+          "width": 0.58,
+          "height": 0.927
+        }
+      },
+      "detail": {
+        "source": "src/assets/perfumes/originals/mandarine/detail-master.png",
+        "scene": true,
+        "fill": 0.9,
+        "objectBounds": {
+          "left": 0.169,
+          "top": 0.124,
+          "width": 0.646,
+          "height": 0.749
+        }
+      },
+      "inspiration": {
+        "source": "src/assets/perfumes/originals/mandarine/3.png",
+        "scene": true,
+        "objectBounds": {
+          "left": 0.235,
+          "top": 0.142,
+          "width": 0.528,
+          "height": 0.675
+        }
+      }
+    },
+    "khamrah-qahwa": {
+      "general": {
+        "source": "src/assets/perfumes/khamrah-qahwa-source.png",
+        "framing": {
+          "left": 0.25636363636363635,
+          "top": 0.11,
+          "width": 0.4827272727272727,
+          "height": 0.7718181818181818,
+          "anchorX": 0.5,
+          "anchorY": 0.9835
+        },
+        "fill": 0.84
+      },
+      "detail": {
+        "source": "src/assets/perfumes/khamrah-qahwa-source.png",
+        "framing": {
+          "left": 0.25636363636363635,
+          "top": 0.11,
+          "width": 0.4827272727272727,
+          "height": 0.7718181818181818,
+          "anchorX": 0.5,
+          "anchorY": 0.9835
+        },
+        "fill": 0.85,
+        "positionX": 0.65,
+        "secondary": {
+          "source": "src/assets/perfumes/detail-boxes/khamrah-qahwa-official-03.png"
+        }
+      },
+      "inspiration": {
+        "source": "src/assets/perfumes/inspirations/angels-harrods.jpg",
+        "fill": 0.85,
+        "outline": {
+          "viewBox": "0 0 922 1048",
+          "path": "M150 68 Q460 55 766 70 Q802 74 802 105 L798 350 Q810 368 807 400 L800 870 Q799 910 767 916 L153 917 Q122 913 121 881 L119 404 Q113 381 122 351 L125 110 Q128 76 150 68 Z"
+        }
+      }
+    },
+    "hawas-malibu": {
+      "general": {
+        "source": "src/assets/perfumes/rasasi-hawas-malibu-official.jpg",
+        "mask": "src/assets/perfumes/masks/masks-v2/hawas-malibu.svg",
+        "framing": {
+          "left": 0.264,
+          "top": 0.06,
+          "width": 0.484,
+          "height": 0.832,
+          "anchorX": 0.5062,
+          "anchorY": 0.9784
+        },
+        "fill": 0.86
+      },
+      "detail": {
+        "source": "src/assets/perfumes/detail-boxes/hawas-malibu-official-pack.jpg",
+        "mask": "src/assets/perfumes/masks/masks-box-v1/hawas-malibu.svg",
+        "framing": {
+          "left": 0.13,
+          "top": 0.2,
+          "width": 0.78,
+          "height": 0.78,
+          "anchorX": 0.5,
+          "anchorY": 0.845
+        },
+        "fill": 0.94
+      },
+      "inspiration": {
+        "source": "src/assets/perfumes/inspirations/lebeau.png",
+        "fill": 0.88,
+        "trimAlpha": true
+      }
+    },
+    "royale-opal": {
+      "general": {
+        "source": "src/assets/perfumes/royale-opal-redbag-original-2992.jpg",
+        "mask": "src/assets/perfumes/masks/masks-v3/royale-opal.svg",
+        "framing": {
+          "left": 0.3442513368983957,
+          "top": 0.030080213903743314,
+          "width": 0.30414438502673796,
+          "height": 0.929144385026738,
+          "anchorX": 0.5,
+          "anchorY": 0.9931654676258993
+        },
+        "fill": 0.88
+      },
+      "detail": {
+        "source": "src/assets/perfumes/detail-boxes/royale-opal-redbag-pack.jpg",
+        "mask": "src/assets/perfumes/masks/masks-box-v1/royale-opal.svg",
+        "framing": {
+          "left": 0.06,
+          "top": 0,
+          "width": 0.84,
+          "height": 0.96,
+          "anchorX": 0.5,
+          "anchorY": 0.99
+        },
+        "fill": 0.94
+      },
+      "inspiration": {
+        "source": "src/assets/perfumes/inspirations/angels-harrods.jpg",
+        "fill": 0.85,
+        "outline": {
+          "viewBox": "0 0 922 1048",
+          "path": "M150 68 Q460 55 766 70 Q802 74 802 105 L798 350 Q810 368 807 400 L800 870 Q799 910 767 916 L153 917 Q122 913 121 881 L119 404 Q113 381 122 351 L125 110 Q128 76 150 68 Z"
+        }
+      }
+    }
+  }
+}

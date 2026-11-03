@@ -1,0 +1,48 @@
+---
+import type { ProductImage } from '../domain/product';
+
+interface Props {
+  generalImage: ProductImage | null;
+  detailImage: ProductImage | null;
+  productName: string;
+}
+const { generalImage, detailImage, productName } = Astro.props;
+const image = generalImage ?? detailImage;
+---
+
+<div class="perfume-zone__visual product-hero-slot">
+  <div class="product-hero" data-product-visual>
+    {image ? (
+      <div class="product-hero__photo-frame">
+        <picture>
+          {detailImage && (
+            <source
+              data-detail-image
+              media="not all"
+              srcset={detailImage.srcSet ?? detailImage.src}
+              sizes="(min-width:56rem) 40vw, 100vw"
+            />
+          )}
+          <img
+            class="perfume-zone__image product-hero__image"
+            src={image.src}
+            alt={image.alt}
+            width={image.width}
+            height={image.height}
+            srcset={image.srcSet}
+            sizes={image.srcSet ? '(min-width:56rem) 320px, 50vw' : undefined}
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
+      </div>
+    ) : (
+      <div class="perfume-placeholder">
+        <span class="perfume-placeholder__word" aria-hidden="true" translate="no">
+          {productName}
+        </span>
+        <span class="perfume-placeholder__caption">Fotografía por confirmar</span>
+      </div>
+    )}
+  </div>
+</div>

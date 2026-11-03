@@ -1,0 +1,33 @@
+{
+  "createdOn": "2026-11-03",
+  "kind": "AI-generated empty photographic background only",
+  "source": "src/assets/photography/perfume-studio-v1.png",
+  "width": 1254,
+  "height": 1254,
+  "sourceSha256": "2362ef2b809675f8ce943d0cbb5e8fb5954532af5af85fe9fb857a78cce29c33",
+  "treatment": "Resize and encode only. Actual product photographs are composited in HTML/CSS and never generated into this scene.",
+  "quality": 88,
+  "outputs": [
+    {
+      "path": "public/images/photography/perfume-studio-v1-320.webp",
+      "width": 320,
+      "height": 320,
+      "bytes": 7760,
+      "sha256": "761eb74f703398574ef1007078a5c9f32a4a0b03bf7d280114b5981f449fb31b"
+    },
+    {
+      "path": "public/images/photography/perfume-studio-v1-640.webp",
+      "width": 640,
+      "height": 640,
+      "bytes": 31888,
+      "sha256": "d1b0866732d98dd5d813748adefc9e057bf711cbebbc030d14fc0c114d0071a4"
+    },
+    {
+      "path": "public/images/photography/perfume-studio-v1-960.webp",
+      "width": 960,
+      "height": 960,
+      "bytes": 66852,
+      "sha256": "f37eca29571c5b539c576f7d5713447b2a0f94e58e7709f849246ab930a237b9"
+    }
+  ]
+}

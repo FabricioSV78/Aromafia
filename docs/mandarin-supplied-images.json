@@ -1,0 +1,228 @@
+{
+  "checkedOn": "2026-11-03",
+  "provenance": "Files explicitly supplied by the owner at public/images/perfumes/Mandarin Sky. The files are used as supplied; no claim is made about their photographic or generative origin.",
+  "purpose": "Three independent images: compact general view, detailed bottle with box, and smaller olfactory reference. The same full portrait canvas and original background are preserved.",
+  "treatment": "Resize and WebP encoding only; no crop, background removal, recoloring, sharpening, generated content, text reconstruction, or exposure correction. Source files remain byte-for-byte intact.",
+  "encoding": {
+    "library": "sharp",
+    "version": "0.35.5",
+    "format": "webp",
+    "quality": 96,
+    "alphaQuality": 100,
+    "effort": 6,
+    "exact": true,
+    "smartSubsample": true,
+    "keepMetadata": true,
+    "withoutEnlargement": true
+  },
+  "images": [
+    {
+      "role": "general",
+      "subject": "Odyssey Mandarin Sky bottle only",
+      "source": {
+        "path": "public/images/perfumes/Mandarin Sky/1.png",
+        "width": 1086,
+        "height": 1448,
+        "aspectRatio": 0.75,
+        "format": "png",
+        "bytes": 1970071,
+        "sha256": "ece1159ea56c0135caada26c6da5cc7076ef8fdd685a236a749961b36e7bd628",
+        "hasAlpha": false,
+        "iccBytes": 0,
+        "exifBytes": 0,
+        "cornerPixels": [
+          {
+            "x": 0,
+            "y": 0,
+            "rgba": [233, 213, 195, 255]
+          },
+          {
+            "x": 1085,
+            "y": 0,
+            "rgba": [228, 207, 188, 255]
+          },
+          {
+            "x": 0,
+            "y": 1447,
+            "rgba": [237, 217, 203, 255]
+          },
+          {
+            "x": 1085,
+            "y": 1447,
+            "rgba": [238, 217, 202, 255]
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "path": "/images/perfumes/mandarine-supplied-general-v1-320.webp",
+          "width": 320,
+          "height": 427,
+          "bytes": 18524,
+          "sha256": "76fd685f11ad5c8d545963c31839bf6233e7bc0ae6c2c3e41776a03f27e01df2",
+          "format": "webp",
+          "hasAlpha": false,
+          "iccBytes": 0,
+          "exifBytes": 186
+        },
+        {
+          "path": "/images/perfumes/mandarine-supplied-general-v1-640.webp",
+          "width": 640,
+          "height": 853,
+          "bytes": 74586,
+          "sha256": "bfa9b9c4f9dd6ec9387868657fce80d42a0885c42166c7ec8ebc3706ecbb77dc",
+          "format": "webp",
+          "hasAlpha": false,
+          "iccBytes": 0,
+          "exifBytes": 186
+        }
+      ]
+    },
+    {
+      "role": "detail",
+      "subject": "Odyssey Mandarin Sky bottle and original product box",
+      "source": {
+        "path": "public/images/perfumes/Mandarin Sky/2.png",
+        "width": 1086,
+        "height": 1448,
+        "aspectRatio": 0.75,
+        "format": "png",
+        "bytes": 2115379,
+        "sha256": "5b684c21077da429834a9913b77dcee1c52f4a1b244ff9602f94e2134aa0514a",
+        "hasAlpha": false,
+        "iccBytes": 0,
+        "exifBytes": 0,
+        "cornerPixels": [
+          {
+            "x": 0,
+            "y": 0,
+            "rgba": [234, 207, 191, 255]
+          },
+          {
+            "x": 1085,
+            "y": 0,
+            "rgba": [230, 204, 187, 255]
+          },
+          {
+            "x": 0,
+            "y": 1447,
+            "rgba": [240, 213, 199, 255]
+          },
+          {
+            "x": 1085,
+            "y": 1447,
+            "rgba": [242, 213, 195, 255]
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "path": "/images/perfumes/mandarine-supplied-detail-v1-640.webp",
+          "width": 640,
+          "height": 853,
+          "bytes": 98238,
+          "sha256": "295e08901e60a4c36c23a89932055eae9cf1841cb6ae767f27edf61b26e66ca2",
+          "format": "webp",
+          "hasAlpha": false,
+          "iccBytes": 0,
+          "exifBytes": 186
+        },
+        {
+          "path": "/images/perfumes/mandarine-supplied-detail-v1-960.webp",
+          "width": 960,
+          "height": 1280,
+          "bytes": 226694,
+          "sha256": "b0538004521a2c66fc767e34ab3384eb447c5638d208b3cdb586d294447bad2d",
+          "format": "webp",
+          "hasAlpha": false,
+          "iccBytes": 0,
+          "exifBytes": 186
+        },
+        {
+          "path": "/images/perfumes/mandarine-supplied-detail-v1-1086.webp",
+          "width": 1086,
+          "height": 1448,
+          "bytes": 308612,
+          "sha256": "634f15389f0c942f2fc9e4974090e56f1a91d7d2710d0ffcfa249bf722528125",
+          "format": "webp",
+          "hasAlpha": false,
+          "iccBytes": 0,
+          "exifBytes": 186
+        }
+      ]
+    },
+    {
+      "role": "reference",
+      "subject": "Scandal Pour Homme bottle, visually supplied by the owner as the comparison reference",
+      "source": {
+        "path": "public/images/perfumes/Mandarin Sky/3.png",
+        "width": 1086,
+        "height": 1448,
+        "aspectRatio": 0.75,
+        "format": "png",
+        "bytes": 1793059,
+        "sha256": "93c225b7ee579e82e535d9759d7ab06ea13ad329792f7f97ad50d826ba446b43",
+        "hasAlpha": false,
+        "iccBytes": 0,
+        "exifBytes": 0,
+        "cornerPixels": [
+          {
+            "x": 0,
+            "y": 0,
+            "rgba": [233, 210, 192, 255]
+          },
+          {
+            "x": 1085,
+            "y": 0,
+            "rgba": [233, 209, 189, 255]
+          },
+          {
+            "x": 0,
+            "y": 1447,
+            "rgba": [240, 217, 203, 255]
+          },
+          {
+            "x": 1085,
+            "y": 1447,
+            "rgba": [240, 215, 197, 255]
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "path": "/images/perfumes/mandarine-supplied-reference-v1-240.webp",
+          "width": 240,
+          "height": 320,
+          "bytes": 14538,
+          "sha256": "e6f103515e3c3ebd685c13ab3483e9ee035e262596617c72d8c22346abfba4f7",
+          "format": "webp",
+          "hasAlpha": false,
+          "iccBytes": 0,
+          "exifBytes": 186
+        },
+        {
+          "path": "/images/perfumes/mandarine-supplied-reference-v1-480.webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 44162,
+          "sha256": "d2b96a0915ac7d52cd7d9f5438aca4bf58baffc8e31d79a85d47caf6a78a7d17",
+          "format": "webp",
+          "hasAlpha": false,
+          "iccBytes": 0,
+          "exifBytes": 186
+        },
+        {
+          "path": "/images/perfumes/mandarine-supplied-reference-v1-640.webp",
+          "width": 640,
+          "height": 853,
+          "bytes": 71764,
+          "sha256": "233d2224b35741a0b79a137a532ec8425ea983678187273ac14ae93ef196aef2",
+          "format": "webp",
+          "hasAlpha": false,
+          "iccBytes": 0,
+          "exifBytes": 186
+        }
+      ]
+    }
+  ]
+}

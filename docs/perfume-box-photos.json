@@ -1,0 +1,347 @@
+{
+  "checkedOn": "2026-11-03",
+  "purpose": "Independent real detail photograph showing each perfume with its matching original presentation box, separate from general bottle-only and inspiration images.",
+  "encoder": {
+    "library": "sharp",
+    "version": "0.35.5",
+    "format": "WebP",
+    "quality": 96,
+    "alphaQuality": 100,
+    "effort": 6,
+    "smartSubsample": true,
+    "exact": true,
+    "keepMetadata": true,
+    "withoutEnlargement": true
+  },
+  "treatment": "Resize and encode only; full native canvas, original ICC/EXIF and meaningful alpha preserved (fully opaque alpha may be omitted by WebP encoder). No crop, recoloring, sharpening, background replacement, generation, label reconstruction, comparisons or textual overlays. Source originals retained intact. CSS placement is a separate integration responsibility.",
+  "images": [
+    {
+      "slug": "9pm",
+      "source": {
+        "path": "src/assets/perfumes/detail-boxes/9pm-mustafa-pack.png",
+        "pageUrl": "https://mustafafragrances.com/products/afnan-9pm-eau-de-parfum",
+        "nativeImageUrl": "https://mustafafragrances.com/cdn/shop/files/Resize_9pm_3.png?v=1753216246&width=2000",
+        "width": 2000,
+        "height": 2000,
+        "bytes": 2021842,
+        "sha256": "2e28cf75c326f012e664e8c7e0f470ed392b3171c52095ec8615028d82d0643d",
+        "hasAlpha": true,
+        "isOpaque": true,
+        "iccBytes": 424,
+        "exifBytes": 166
+      },
+      "visualVerification": "Afnan 9 PM Eau de Parfum100ml bottle and original black presentation box; complete real products. Source alpha channel is fully opaque.",
+      "outputs": [
+        {
+          "path": "/images/perfumes/9pm-detail-box-v1-320.webp",
+          "width": 320,
+          "height": 320,
+          "bytes": 15910,
+          "sha256": "d21eac8b13a209beeea7c005e1c04333b37c19aa8339e083531d48bd0a2f5fa1",
+          "hasAlpha": false,
+          "iccBytes": 424
+        },
+        {
+          "path": "/images/perfumes/9pm-detail-box-v1-640.webp",
+          "width": 640,
+          "height": 640,
+          "bytes": 48558,
+          "sha256": "007b996d200e35f6eb420e1b8f11ddc82ea1b1e5e7c73bd57787434d1d5e416f",
+          "hasAlpha": false,
+          "iccBytes": 424
+        },
+        {
+          "path": "/images/perfumes/9pm-detail-box-v1-960.webp",
+          "width": 960,
+          "height": 960,
+          "bytes": 92574,
+          "sha256": "f0ac553616e5f7dd8a27b0b52bb1d0514467071ad6040c6feb53e3648d4ae053",
+          "hasAlpha": false,
+          "iccBytes": 424
+        },
+        {
+          "path": "/images/perfumes/9pm-detail-box-v1-2000.webp",
+          "width": 2000,
+          "height": 2000,
+          "bytes": 330436,
+          "sha256": "e20d55e651f4ad0e278e422ef3c28c754b311cb97e01832f4f5913a6d5be6ca2",
+          "hasAlpha": false,
+          "iccBytes": 424
+        }
+      ],
+      "displayMask": {
+        "path": "/images/perfumes/masks-box-v1/9pm.svg",
+        "authorship": "Manual SVG path code in normalized source coordinates",
+        "framing": {
+          "left": 0.1671875,
+          "top": 0.078125,
+          "width": 0.671875,
+          "height": 0.825,
+          "anchorX": 0.5,
+          "anchorY": 0.98
+        },
+        "suggestedFill": 0.9
+      }
+    },
+    {
+      "slug": "hawas-ice",
+      "source": {
+        "path": "src/assets/perfumes/detail-boxes/hawas-ice-official-pack.jpg",
+        "pageUrl": "https://store.rasasi.com.sa/en/aeezlxd/p330366857",
+        "nativeImageUrl": "https://cdn.salla.sa/lGDEen/f29ae8b0-bd92-4a0c-8c86-03297d025fe5-1000x1000-sqGDhGVIsz4dpn5RXKV60WbLrwM3rU0nLWOXSniZ.jpg",
+        "width": 1000,
+        "height": 1000,
+        "bytes": 46708,
+        "sha256": "2fd7734d2f666942a5bcc7c413c8bbdaec910002e274e9af26c83191273b658e",
+        "hasAlpha": false,
+        "isOpaque": true,
+        "iccBytes": 0,
+        "exifBytes": 0
+      },
+      "visualVerification": "Rasasi Hawas Ice100ml bottle and original icy-blue box; manufacturer photograph.",
+      "outputs": [
+        {
+          "path": "/images/perfumes/hawas-ice-detail-box-v1-320.webp",
+          "width": 320,
+          "height": 320,
+          "bytes": 13616,
+          "sha256": "0d2826c20fe7302b9c37ae17c5c53bcd6d6d2637684df6116e8d5e7bf3e914ed",
+          "hasAlpha": false,
+          "iccBytes": 0
+        },
+        {
+          "path": "/images/perfumes/hawas-ice-detail-box-v1-640.webp",
+          "width": 640,
+          "height": 640,
+          "bytes": 38896,
+          "sha256": "d435323a6346f37983d48575cbf2bc004b5991066bbcb62d5458abae6c4ded1a",
+          "hasAlpha": false,
+          "iccBytes": 0
+        },
+        {
+          "path": "/images/perfumes/hawas-ice-detail-box-v1-960.webp",
+          "width": 960,
+          "height": 960,
+          "bytes": 68428,
+          "sha256": "992517beb164b487483adeaa94ae9d1f40062418dbe81ccc18822f46090a4c49",
+          "hasAlpha": false,
+          "iccBytes": 0
+        },
+        {
+          "path": "/images/perfumes/hawas-ice-detail-box-v1-1000.webp",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 65520,
+          "sha256": "4a9228f17e0363c74f5a8bc970159755aaadec38a12b3597ffdb4a12a64877fc",
+          "hasAlpha": false,
+          "iccBytes": 0
+        }
+      ],
+      "displayMask": {
+        "path": "/images/perfumes/masks-box-v1/hawas-ice.svg",
+        "authorship": "Manual SVG path code in normalized source coordinates",
+        "framing": {
+          "left": 0.0640625,
+          "top": 0.096875,
+          "width": 0.85625,
+          "height": 0.7125,
+          "anchorX": 0.5,
+          "anchorY": 0.98
+        },
+        "suggestedFill": 0.9
+      }
+    },
+    {
+      "slug": "khamrah-qahwa",
+      "source": {
+        "path": "src/assets/perfumes/detail-boxes/khamrah-qahwa-official-02.png",
+        "pageUrl": "https://www.lattafaindia.com/products/khamrah-qahwa",
+        "nativeImageUrl": "https://www.lattafaindia.com/cdn/shop/files/02_1_4c61c239-7bdb-47bb-bd60-7841d694911d.png?v=1768806075&width=2000",
+        "width": 2000,
+        "height": 2000,
+        "bytes": 2476903,
+        "sha256": "536d6edb5c48917d300452e4824138c2b64b8744a4deb29b5290ca25d308c2bb",
+        "hasAlpha": true,
+        "isOpaque": false,
+        "iccBytes": 0,
+        "exifBytes": 36
+      },
+      "visualVerification": "Lattafa Khamrah Qahwa bottle and brown original box; QAHWA lettering on both;100ML page variant. Native transparency preserved.",
+      "outputs": [
+        {
+          "path": "/images/perfumes/khamrah-qahwa-detail-box-v1-320.webp",
+          "width": 320,
+          "height": 320,
+          "bytes": 24358,
+          "sha256": "692756764323739cd63326b3cf8e23fbbfc6e3a828320ee9337f64bf3adc684e",
+          "hasAlpha": true,
+          "iccBytes": 0
+        },
+        {
+          "path": "/images/perfumes/khamrah-qahwa-detail-box-v1-640.webp",
+          "width": 640,
+          "height": 640,
+          "bytes": 83332,
+          "sha256": "9238c0097d54db6481c1934b89350d63c73caab9f33112db79fa029ce7d10870",
+          "hasAlpha": true,
+          "iccBytes": 0
+        },
+        {
+          "path": "/images/perfumes/khamrah-qahwa-detail-box-v1-960.webp",
+          "width": 960,
+          "height": 960,
+          "bytes": 163230,
+          "sha256": "5f4e5f156db57e3baaaff28bc61b393762658ec2bc251fd711adab875376c7db",
+          "hasAlpha": true,
+          "iccBytes": 0
+        },
+        {
+          "path": "/images/perfumes/khamrah-qahwa-detail-box-v1-2000.webp",
+          "width": 2000,
+          "height": 2000,
+          "bytes": 414566,
+          "sha256": "1c5802b9bf68970ab2b5256dbe8797aa71226ae1b5bef46a255b3851ab315507",
+          "hasAlpha": true,
+          "iccBytes": 0
+        }
+      ]
+    },
+    {
+      "slug": "hawas-malibu",
+      "source": {
+        "path": "src/assets/perfumes/detail-boxes/hawas-malibu-official-pack.jpg",
+        "pageUrl": "https://store.rasasi.com.sa/en/bpzlndr/p533992836",
+        "nativeImageUrl": "https://cdn.salla.sa/lGDEen/c7cdb741-95cf-492d-80e8-90f9d5c8fbc3-1000x1000-KClwy1NJIXJjDgHfk50zQRB4jPedv8n7Qdm0xG7c.jpg",
+        "width": 1000,
+        "height": 1000,
+        "bytes": 46674,
+        "sha256": "a1f8bde7c5a165fc4a64fe357834620f8366c06020414ef4f6ac8fe3263efbdf",
+        "hasAlpha": false,
+        "isOpaque": true,
+        "iccBytes": 0,
+        "exifBytes": 0
+      },
+      "visualVerification": "Rasasi Hawas Malibu100ml bottle and matching black/turquoise box; manufacturer photograph.",
+      "outputs": [
+        {
+          "path": "/images/perfumes/hawas-malibu-detail-box-v1-320.webp",
+          "width": 320,
+          "height": 320,
+          "bytes": 13536,
+          "sha256": "c351c7469a27179e37b09a329e9c2b8591eec7f01189ddfb59da0470a45db033",
+          "hasAlpha": false,
+          "iccBytes": 0
+        },
+        {
+          "path": "/images/perfumes/hawas-malibu-detail-box-v1-640.webp",
+          "width": 640,
+          "height": 640,
+          "bytes": 37912,
+          "sha256": "2adc7e0afeff9b5cad45e9ee632c23afdcc588da908705e60f1fce191b661b4b",
+          "hasAlpha": false,
+          "iccBytes": 0
+        },
+        {
+          "path": "/images/perfumes/hawas-malibu-detail-box-v1-960.webp",
+          "width": 960,
+          "height": 960,
+          "bytes": 68662,
+          "sha256": "95d22d834becf2e2d37867fa34afa60b80846c921797ebb2c9f2908437e9aa66",
+          "hasAlpha": false,
+          "iccBytes": 0
+        },
+        {
+          "path": "/images/perfumes/hawas-malibu-detail-box-v1-1000.webp",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 66110,
+          "sha256": "96a782d8ebfe65f770e8b929b329972864b7e197d9a4fd9023856a16f8ff0ca5",
+          "hasAlpha": false,
+          "iccBytes": 0
+        }
+      ],
+      "displayMask": {
+        "path": "/images/perfumes/masks-box-v1/hawas-malibu.svg",
+        "authorship": "Manual SVG path code in normalized source coordinates",
+        "framing": {
+          "left": 0.1375,
+          "top": 0.2171875,
+          "width": 0.7671875,
+          "height": 0.6328125,
+          "anchorX": 0.5,
+          "anchorY": 0.98
+        },
+        "suggestedFill": 0.9
+      }
+    },
+    {
+      "slug": "royale-opal",
+      "source": {
+        "path": "src/assets/perfumes/detail-boxes/royale-opal-redbag-pack.jpg",
+        "pageUrl": "https://redbagstore.com/products/royale-opal-by-zakat-for-women-eau-de-parfum-2-7oz",
+        "nativeImageUrl": "https://cdn.shopify.com/s/files/1/0249/0151/7378/files/Royale_Opal_By_Zakat_For_Women_Eau_De_Parfum_2.7oz_80ml.jpg?v=1758473200",
+        "width": 2992,
+        "height": 2992,
+        "bytes": 921908,
+        "sha256": "7d13e82e9e2f1302c4a28a83fc1f90fc834027ade78821af8662573f841480e7",
+        "hasAlpha": false,
+        "isOpaque": true,
+        "iccBytes": 424,
+        "exifBytes": 172
+      },
+      "visualVerification": "Physical Zakat Royale Opal bottle and original box; visible80ML/2.7FL.OZ.; complete eagle crown and bottle retained.",
+      "outputs": [
+        {
+          "path": "/images/perfumes/royale-opal-detail-box-v1-320.webp",
+          "width": 320,
+          "height": 320,
+          "bytes": 29960,
+          "sha256": "d4f83ab23e4da9c609f7b36e8085af3e0c12ba011574906426944616872325b4",
+          "hasAlpha": false,
+          "iccBytes": 424
+        },
+        {
+          "path": "/images/perfumes/royale-opal-detail-box-v1-640.webp",
+          "width": 640,
+          "height": 640,
+          "bytes": 114250,
+          "sha256": "82ff487617d893ede7ae67b35c1804676ce7b8a8deeb3a343230e96f6e9ad8df",
+          "hasAlpha": false,
+          "iccBytes": 424
+        },
+        {
+          "path": "/images/perfumes/royale-opal-detail-box-v1-960.webp",
+          "width": 960,
+          "height": 960,
+          "bytes": 248810,
+          "sha256": "ea7a6ce8d473710c93382b5c11e5a5b2ee341930236987aa27badbc76ac000ef",
+          "hasAlpha": false,
+          "iccBytes": 424
+        },
+        {
+          "path": "/images/perfumes/royale-opal-detail-box-v1-2992.webp",
+          "width": 2992,
+          "height": 2992,
+          "bytes": 1441080,
+          "sha256": "74c5f954262853a62d58f735a57fcd56c01dcd4b01a1899abd326e3a1b16b9df",
+          "hasAlpha": false,
+          "iccBytes": 424
+        }
+      ],
+      "displayMask": {
+        "path": "/images/perfumes/masks-box-v1/royale-opal.svg",
+        "authorship": "Manual SVG path code in normalized source coordinates",
+        "framing": {
+          "left": 0.0671875,
+          "top": 0,
+          "width": 0.8296875,
+          "height": 0.9578125,
+          "anchorX": 0.5,
+          "anchorY": 0.98
+        },
+        "suggestedFill": 0.9
+      }
+    }
+  ],
+  "maskTreatment": "Manual code-authored SVG visibility contours traced against the 640px real packshot. Only the exterior background is hidden; photographed product RGB, labels, crowns and box pixels remain unchanged. No raster modification or generated product illustration."
+}

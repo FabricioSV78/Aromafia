@@ -1,0 +1,265 @@
+@layer components {
+  .book-experience {
+    --font-display: 'Times New Roman', Georgia, serif;
+    --container-max: 85rem;
+    --book-paper: #ffebcd;
+    --book-page-surface:
+      radial-gradient(ellipse at 35% 30%, #fff5e39c, transparent 74%),
+      linear-gradient(105deg, #f9e1bf, #ffedcf 46%, #fae5c5);
+    --book-ink: #19130d;
+    --book-gold: #e2b665;
+    --book-line: #bf9c6c66;
+    --catalog-width: min(82.5vw, 1360px);
+    background:
+      radial-gradient(ellipse at 50% 42%, #6c442315, transparent 65%),
+      radial-gradient(ellipse at 14% 72%, #62421e12, transparent 44%), #12100c;
+    color: #ffebcc;
+  }
+  .book-experience .site-header,
+  .book-experience .book-footer {
+    background: #12100cd9;
+    border-color: #c49d5f36;
+  }
+  .book-experience .site-header__wordmark {
+    color: #ffebce;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+  }
+  .book-experience .site-header__navigation a,
+  .book-experience .site-header__contact {
+    color: #fae5c4;
+  }
+  .book-experience .site-header__contact {
+    border-color: #c8a062;
+    border-radius: 3px;
+    box-shadow: inset 0 0 0 3px #c8a0620a;
+  }
+  .book-experience .perfume-page[data-book-leaf-kind='products'] {
+    background: var(--book-page-surface);
+    border-color: #b98e59;
+  }
+  .is-enhanced .perfume-page[data-book-leaf-kind='products'] {
+    border-radius: 4px;
+    box-shadow:
+      inset 0 1px 1px #fff9ed,
+      inset 0 0 24px #b6823a0b;
+  }
+  .is-enhanced .book-pages::after {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      #7d522714 30%,
+      #603d2866 50%,
+      #80512418 68%,
+      transparent
+    );
+    width: 2.6rem;
+  }
+  .book-experience .perfume-page__running-head {
+    color: #35271b;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+  }
+  .book-experience .perfume-zone:not(.is-reading) .perfume-zone__open {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(0.9rem, 1.5vw, 1.5rem);
+  }
+  .book-experience .perfume-zone + .perfume-zone {
+    border-top: 0;
+  }
+  .book-experience .perfume-zone + .perfume-zone:not(.is-reading) {
+    box-shadow: inset 0 1px 0 var(--book-line);
+  }
+  .book-experience .perfume-zone:not(.is-reading) .perfume-zone__brand {
+    font-size: clamp(0.8125rem, 0.95vw, 1rem);
+    font-weight: 650;
+    line-height: 1.3;
+    color: #241a12;
+    margin-bottom: 0.35rem;
+  }
+  .book-experience .perfume-zone:not(.is-reading) h4 {
+    min-block-size: 0;
+    font-size: clamp(1.6rem, 2.55vw, 2.55rem);
+    font-weight: 700;
+    line-height: 1.01;
+    letter-spacing: -0.045em;
+    color: #15100b;
+    overflow-wrap: normal;
+    hyphens: none;
+  }
+  .book-experience .perfume-zone:not(.is-reading) .perfume-zone__description {
+    display: block;
+    overflow: visible;
+    -webkit-line-clamp: unset;
+    font-size: clamp(0.8125rem, 1.02vw, 1.0625rem);
+    line-height: 1.45;
+    margin-top: 0.6rem;
+    color: #2b2118;
+  }
+  .book-experience .perfume-zone:not(.is-reading) .product-price__current {
+    color: #100d09;
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 2.3vw, 2.3rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.035em;
+  }
+  .book-experience .perfume-zone:not(.is-reading) .perfume-zone__explore {
+    color: #21180f;
+    font-size: clamp(0.8125rem, 0.98vw, 1rem);
+    line-height: 1.3;
+  }
+  .book-experience .perfume-zone:not(.is-reading) .perfume-zone__purchase {
+    gap: 0.8rem;
+  }
+  .book-experience .perfume-zone:not(.is-reading) .perfume-zone__copy {
+    gap: 0.55rem;
+    justify-content: center;
+    align-self: center;
+    height: auto;
+  }
+  .book-experience .perfume-zone:not(.is-reading) .perfume-zone__purchase {
+    margin-top: 0.15rem;
+  }
+  .book-experience .perfume-zone:not(.is-reading) .perfume-zone__description {
+    margin-top: 0;
+  }
+  .book-experience .book-control,
+  .book-experience .book-focus-controls {
+    color: #f8dfb6;
+  }
+  .book-experience .book-progress span {
+    background: #e3ad54;
+  }
+  .book-experience .book-footer .trust-strip li {
+    color: #f3dfbd;
+    font-size: 0.8125rem;
+  }
+  .book-experience .book-footer .trust-strip svg {
+    color: #dfaa50;
+    width: 24px;
+    height: 24px;
+  }
+  @media (min-width: 56rem) {
+    .book-experience .book-camera,
+    .book-experience .book-scene,
+    .book-experience .book-controls,
+    .book-experience .book-focus-controls {
+      width: min(100%, var(--catalog-width));
+    }
+    .book-experience.is-enhanced .book-camera .book-scene {
+      width: 100%;
+      height: 100%;
+    }
+    .book-experience.is-enhanced .book-camera,
+    .book-experience.is-enhanced .book-scene {
+      height: min(100%, 700px);
+    }
+    .book-experience .book-control {
+      font-size: 0.8125rem;
+    }
+    .book-experience .book-controls output {
+      font-size: 0.8125rem;
+    }
+  }
+  @media (min-width: 56rem) and (max-height: 800px) {
+    .book-experience .perfume-zone:not(.is-reading) h4 {
+      font-size: clamp(1.35rem, 2vw, 1.8rem);
+    }
+    .book-experience .perfume-zone:not(.is-reading) .perfume-zone__brand {
+      font-size: 0.75rem;
+      margin-bottom: 0.2rem;
+    }
+    .book-experience .perfume-zone:not(.is-reading) .perfume-zone__description {
+      font-size: 0.8125rem;
+      margin-top: 0.3rem;
+    }
+    .book-experience .perfume-zone:not(.is-reading) .product-price__current {
+      font-size: 1.6rem;
+    }
+    .book-experience .perfume-zone:not(.is-reading) .perfume-zone__explore {
+      font-size: 0.75rem;
+    }
+    .book-experience .perfume-zone:not(.is-reading) .perfume-zone__copy,
+    .book-experience .perfume-zone:not(.is-reading) .perfume-zone__purchase {
+      gap: 0.5rem;
+    }
+  }
+  @media (max-width: 55.999rem) {
+    .book-experience.is-enhanced {
+      min-height: 42rem;
+    }
+    .book-experience .perfume-zone:not(.is-reading) .perfume-zone__open {
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: 0.75rem;
+    }
+    .book-experience .perfume-zone:not(.is-reading) h4 {
+      font-size: clamp(1.25rem, 5.4vw, 1.6rem);
+      line-height: 1.04;
+    }
+    .book-experience .perfume-zone:not(.is-reading) .perfume-zone__brand {
+      font-size: 0.75rem;
+    }
+    .book-experience .perfume-zone:not(.is-reading) .perfume-zone__description {
+      font-size: 0.8125rem;
+      line-height: 1.4;
+    }
+    .book-experience .perfume-zone:not(.is-reading) .product-price__current {
+      font-size: 1.45rem;
+    }
+    .book-experience .perfume-zone:not(.is-reading) .perfume-zone__explore {
+      font-size: 0.75rem;
+    }
+    .book-experience .perfume-page__running-head {
+      font-size: 0.625rem;
+    }
+    .book-experience .book-footer .trust-strip li {
+      font-size: 0.6875rem;
+      line-height: 1.35;
+    }
+    .book-experience .book-footer .trust-strip svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+  @media (min-width: 40rem) and (max-width: 55.999rem) {
+    .book-experience .book-camera,
+    .book-experience .book-scene {
+      width: min(100%, 620px);
+    }
+    .book-experience .perfume-zone:not(.is-reading) h4 {
+      font-size: 1.9rem;
+    }
+    .book-experience .perfume-zone:not(.is-reading) .perfume-zone__description {
+      font-size: 0.9375rem;
+    }
+  }
+  @media (max-width: 22.5rem) {
+    .book-experience.is-enhanced {
+      min-height: 46rem;
+    }
+  }
+  @media (max-width: 55.999rem) and (max-height: 720px) {
+    .book-experience .perfume-zone:not(.is-reading) .perfume-zone__copy,
+    .book-experience .perfume-zone:not(.is-reading) .perfume-zone__purchase {
+      gap: 0.2rem;
+    }
+    .book-experience .perfume-zone:not(.is-reading) h4 {
+      font-size: 1.2rem;
+    }
+    .book-experience .perfume-zone:not(.is-reading) .perfume-zone__brand {
+      font-size: 0.6875rem;
+    }
+    .book-experience .perfume-zone:not(.is-reading) .perfume-zone__description {
+      font-size: 0.75rem;
+      line-height: 1.3;
+      margin-top: 0;
+    }
+    .book-experience .perfume-zone:not(.is-reading) .product-price__current {
+      font-size: 1.3rem;
+    }
+    .book-experience .perfume-zone:not(.is-reading) .perfume-zone__explore {
+      font-size: 0.6875rem;
+    }
+  }
+}

@@ -1,0 +1,162 @@
+---
+import type { CatalogProduct } from '../domain/product';
+import BrandMark from '../../../components/brand/BrandMark.astro';
+import PerfumePage from './PerfumePage.astro';
+import OrderForm from '../../orders/components/OrderForm.astro';
+import { contact } from '../../../config/contact';
+
+interface Props {
+  products: readonly CatalogProduct[];
+  at: Date;
+}
+const { products, at } = Astro.props;
+const productPages = Array.from({ length: Math.ceil(products.length / 2) }, (_, index) =>
+  products.slice(index * 2, index * 2 + 2),
+);
+const hasEndpaper = productPages.length % 2 === 1;
+const totalPages = productPages.length + Number(hasEndpaper);
+---
+
+<h1 class="sr-only">AROMAFIA, perfumes originales</h1>
+<div class="book-viewport" data-book-viewport>
+  <div class="book-camera" data-book-camera>
+    <div class="book-scene" data-book-scene>
+      <div class="book-volume" data-book-volume>
+        <section
+          class="book-pages"
+          id="coleccion"
+          data-book-pages
+          aria-labelledby="book-collection-title"
+        >
+          <h2 id="book-collection-title" class="sr-only">
+            La colección
+          </h2>
+          {productPages.map((pageProducts, index) => (
+            <PerfumePage products={pageProducts} folio={index + 1} total={totalPages} at={at} />
+          ))}
+          {hasEndpaper && (
+            <section
+              class="perfume-page book-endpaper"
+              data-book-leaf
+              data-book-leaf-kind="endpaper"
+              aria-labelledby="titulo-contraportada"
+            >
+              <h3 id="titulo-contraportada" class="sr-only" data-book-leaf-title>
+                Contraportada
+              </h3>
+              <div class="perfume-page__running-head" aria-hidden="true">
+                <span translate="no">AROMAFIA</span>
+                <span>Perú</span>
+              </div>
+              <div class="book-endpaper__content">
+                <div class="book-endpaper__art">
+                  <BrandMark />
+                </div>
+                <p>Originales. Con carácter.</p>
+                <span>{products.length} perfumes. Toda una actitud.</span>
+              </div>
+            </section>
+          )}
+          {!products.length && (
+            <p class="book-empty">
+              Estamos preparando la colección. Escríbenos para conocer nuestros perfumes.
+            </p>
+          )}
+        </section>
+        <div class="book-cover" data-book-cover>
+          <div class="book-cover__front">
+            <div class="book-cover__spine" aria-hidden="true">
+              <span translate="no">AROMAFIA</span>
+            </div>
+            <div class="book-cover__frame">
+              <div class="book-cover__running">
+                <span>Perfumes originales</span>
+                <span>Perú</span>
+              </div>
+              <div class="book-cover__art">
+                <BrandMark eager />
+              </div>
+              <p class="book-cover__invitation">Hay presencias que no se olvidan.</p>
+              <a href="#coleccion" class="book-open" data-book-open>
+                Abrir libro{' '}
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  aria-hidden="true"
+                >
+                  <path d="M12 5v15m0-14C8 3 4 4 2 5v14c3-1 6-1 10 1 4-2 7-2 10-1V5c-2-1-6-2-10 1Z" />
+                </svg>
+              </a>
+            </div>
+            <div class="book-cover__shine" aria-hidden="true"></div>
+          </div>
+          <div class="book-cover__back" aria-hidden="true">
+            <span translate="no">AROMAFIA</span>
+            <p>
+              Huele como jeque,
+              <br />
+              paga como causa.
+            </p>
+            <span class="book-cover__seal">Perú</span>
+          </div>
+        </div>
+        <div class="book-turn-layer" data-book-turn-layer aria-hidden="true"></div>
+        <dialog class="order-dialog" data-order-stage aria-labelledby="pedido-title" hidden inert>
+          <OrderForm products={products} whatsappHref={contact.whatsapp.href} />
+        </dialog>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="book-controls" data-book-controls hidden>
+  <button
+    type="button"
+    class="book-control book-control--previous"
+    data-book-prev
+    aria-label="Página anterior"
+  >
+    <span aria-hidden="true">←</span>
+    <span>Anterior</span>
+  </button>
+  <div class="book-controls__position">
+    <output data-book-status aria-live="polite" aria-atomic="true">
+      El catálogo
+    </output>
+    <div class="book-progress" aria-hidden="true">
+      <span data-book-progress></span>
+    </div>
+  </div>
+  <button
+    type="button"
+    class="book-control book-control--next"
+    data-book-next
+    aria-label="Página siguiente"
+  >
+    <span>Siguiente</span>
+    <span aria-hidden="true">→</span>
+  </button>
+  <button
+    type="button"
+    class="book-control book-control--close"
+    data-book-close
+    aria-label="Cerrar libro"
+  >
+    Cerrar <span aria-hidden="true">×</span>
+  </button>
+</div>
+<div class="book-focus-controls" data-book-focus-controls hidden>
+  <button type="button" class="book-focus-return" data-book-return>
+    <span aria-hidden="true">←</span> Volver al libro
+  </button>
+  <p data-book-focused-name aria-live="polite" translate="no"></p>
+</div>
+<p class="book-closed-note">
+  Originales. Con carácter. <span>Elige una página para empezar.</span>
+</p>
+<noscript>
+  <p class="book-noscript">La colección completa, página a página.</p>
+</noscript>

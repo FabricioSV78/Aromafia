@@ -1,0 +1,37 @@
+---
+import { Image } from 'astro:assets';
+import originalLogo from '../../../pantalla_inicial/AROMAFIA_logo_OFICIAL_original_sin_modificar_1254x1254.png';
+
+interface Props {
+  class?: string;
+  eager?: boolean;
+}
+
+const { class: className, eager = false } = Astro.props;
+---
+
+<Image
+  src={originalLogo}
+  alt="Logo de AROMAFIA: llama con lentes de sol y vestimenta árabe."
+  width={1254}
+  widths={[320, 640, 960, 1254]}
+  sizes="(min-width:56rem) min(40vw, 560px), (max-height:720px) 74vw, min(88vw, 440px)"
+  format="webp"
+  quality={94}
+  loading={eager ? 'eager' : 'lazy'}
+  fetchpriority={eager ? 'high' : 'auto'}
+  decoding="async"
+  class:list={['brand-mark', className]}
+/>
+
+<style>
+  @layer components {
+    .brand-mark {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1;
+      object-fit: contain;
+    }
+  }
+</style>

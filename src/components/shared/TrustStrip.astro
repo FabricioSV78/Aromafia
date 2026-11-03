@@ -1,0 +1,24 @@
+---
+import { commerce } from '../../config/commerce';
+---
+
+<ul class="trust-strip" aria-label="Originalidad y entregas">
+  <li>
+    <svg viewBox="0 0 28 28" fill="none" aria-hidden="true" focusable="false">
+      <use href="/images/icons/catalog-symbols-v1.svg#authenticity" />
+    </svg>
+    <span>{commerce.authenticity}</span>
+  </li>
+  <li>
+    <svg viewBox="0 0 28 28" fill="none" aria-hidden="true" focusable="false">
+      <use href="/images/icons/catalog-symbols-v1.svg#delivery" />
+    </svg>
+    <span>{commerce.cashOnDelivery.label}</span>
+  </li>
+  <li>
+    <svg viewBox="0 0 28 28" fill="none" aria-hidden="true" focusable="false">
+      <use href="/images/icons/catalog-symbols-v1.svg#shipping" />
+    </svg>
+    <span>{commerce.shipping.label}</span>
+  </li>
+</ul>

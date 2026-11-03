@@ -1,0 +1,87 @@
+{
+  "checkedOn": "2026-11-03",
+  "slug": "royale-opal",
+  "purpose": "High-resolution existing real photograph with legible original product details for large catalog and reading views; responsive WebP sizes cap at native width.",
+  "source": {
+    "path": "src/assets/perfumes/royale-opal-redbag-original-2992.jpg",
+    "pageUrl": "https://redbagstore.com/products/royale-opal-by-zakat-for-women-eau-de-parfum-2-7oz",
+    "publicProductJsonUrl": "https://redbagstore.com/products/royale-opal-by-zakat-for-women-eau-de-parfum-2-7oz.js",
+    "nativeImageUrl": "https://cdn.shopify.com/s/files/1/0249/0151/7378/files/Royale_Opal_By_Zakat_For_Women_Eau_De_Parfum_2.7oz_80ml.....jpg?v=1787894837",
+    "width": 2992,
+    "height": 2992,
+    "bytes": 155777,
+    "sha256": "29360f4da3053b47ed0a122dfe41d8a0343448331f06512f495e76ece061a9c4",
+    "iccBytes": 424,
+    "exifBytes": 172,
+    "treatment": "Intact supplier source copied byte-for-byte. Existing supplier-isolated real white bottle with golden eagle cap and original ROYALE OPAL / Zakat lettering; source lighting has a warm off-white bottle tone."
+  },
+  "capacityCorroboration": {
+    "capacityMl": 80,
+    "pageLabel": "Royale Opal By Zakat For Women Eau De Parfum 2.7oz/80ml",
+    "nativeImageUrl": "https://cdn.shopify.com/s/files/1/0249/0151/7378/files/Royale_Opal_By_Zakat_For_Women_Eau_De_Parfum_2.7oz_80ml.jpg?v=1758473200",
+    "width": 2992,
+    "height": 2992,
+    "sha256": "7d13e82e9e2f1302c4a28a83fc1f90fc834027ade78821af8662573f841480e7",
+    "evidence": "Sibling physical bottle and box photograph; both labels read ROYALE OPAL and the original box visibly states 80ML. 2.7 FL.OZ."
+  },
+  "format": "WebP",
+  "quality": 96,
+  "encoderEffort": 6,
+  "treatment": "Resize only with full native framing, without enlargement, color correction, sharpening, generation, label reconstruction or background replacement. Preserve source metadata and ICC profile with sharp.keepMetadata(). The independent display mask and framing are configured by the catalog integration.",
+  "outputs": [
+    {
+      "path": "/images/perfumes/royale-opal-clarity-v3-320.webp",
+      "width": 320,
+      "height": 320,
+      "bytes": 7094,
+      "sha256": "729402d70c89785882e874fa9872add18b9bebcef69722027d4e2b507bdd706f",
+      "iccBytes": 424,
+      "exifBytes": 162
+    },
+    {
+      "path": "/images/perfumes/royale-opal-clarity-v3-640.webp",
+      "width": 640,
+      "height": 640,
+      "bytes": 19974,
+      "sha256": "db6216f09921432bcd6388949cb45dde736a3de49686a3d45886bc41455ff2c1",
+      "iccBytes": 424,
+      "exifBytes": 162
+    },
+    {
+      "path": "/images/perfumes/royale-opal-clarity-v3-960.webp",
+      "width": 960,
+      "height": 960,
+      "bytes": 38774,
+      "sha256": "e2b4024579e67d4a1a24f46b813ee362a8fd24de847427b14abf9d82f4a06a5e",
+      "iccBytes": 424,
+      "exifBytes": 162
+    },
+    {
+      "path": "/images/perfumes/royale-opal-clarity-v3-1440.webp",
+      "width": 1440,
+      "height": 1440,
+      "bytes": 72176,
+      "sha256": "159f58c60ae11bc6ed24e51ae2f3d358b6bd87d045ca66a019442cf657c7e1e3",
+      "iccBytes": 424,
+      "exifBytes": 162
+    },
+    {
+      "path": "/images/perfumes/royale-opal-clarity-v3-1920.webp",
+      "width": 1920,
+      "height": 1920,
+      "bytes": 108900,
+      "sha256": "739d60ae38646847e21506e199d5ada180dfd384ba8c81d6f3aa2670b837bc88",
+      "iccBytes": 424,
+      "exifBytes": 162
+    },
+    {
+      "path": "/images/perfumes/royale-opal-clarity-v3-2992.webp",
+      "width": 2992,
+      "height": 2992,
+      "bytes": 187728,
+      "sha256": "5349dc80b1e78a0d7104515f77e5339f5b95e6209f4b3aae876a41883bf527e4",
+      "iccBytes": 424,
+      "exifBytes": 162
+    }
+  ]
+}

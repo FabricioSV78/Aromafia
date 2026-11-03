@@ -1,0 +1,51 @@
+---
+import type { VariantPriceDisplay } from '../domain/variant-price';
+import type { PerfumeVariant } from '../domain/product';
+import { formatPen } from '../../../shared/lib/money';
+
+interface Props {
+  price: VariantPriceDisplay;
+  marketReference?: PerfumeVariant['marketReference'];
+}
+const { price, marketReference } = Astro.props;
+---
+
+<div class="product-price">
+  {price.currentPrice ? (
+    <>
+      <div class="product-price__values">
+        {price.regularPrice && (
+          <del class="product-price__previous">
+            <span class="sr-only">Precio anterior: </span>
+            {formatPen(price.regularPrice)}
+          </del>
+        )}
+        {!price.regularPrice && marketReference && (
+          <a
+            class="product-price__reference"
+            data-market-reference
+            data-market-source
+            href={marketReference.source.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={`Referencia de ${marketReference.source.label}, consultada el ${marketReference.checkedOn}. Abre otra pestaña.`}
+          >
+            <span class="product-price__comparison-label">Ref.</span>{' '}
+            <s class="product-price__previous">
+              <span class="sr-only">Precio en {marketReference.source.label}: </span>
+              {formatPen(marketReference.price)}
+            </s>
+          </a>
+        )}
+        <data
+          value={(price.currentPrice.amountInCents / 100).toFixed(2)}
+          class="product-price__current"
+        >
+          {formatPen(price.currentPrice)}
+        </data>
+      </div>
+    </>
+  ) : (
+    <span class="product-price__unconfirmed">Consulta el precio</span>
+  )}
+</div>

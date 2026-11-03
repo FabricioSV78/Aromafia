@@ -1,0 +1,59 @@
+{
+  "checkedOn": "2026-11-02",
+  "products": [
+    {
+      "slug": "9pm",
+      "brand": { "id": "afnan", "name": "Afnan" },
+      "classification": "men",
+      "olfactoryFamilies": ["Especiada", "Afrutada"],
+      "shortDescription": "Manzana y canela sobre un fondo de vainilla y haba tonka.",
+      "description": "Una salida de manzana, bergamota y canela da paso a un corazón floral de lirio de los valles y azahar, con un fondo cálido de vainilla, ámbar y haba tonka.",
+      "notes": {
+        "top": ["Bergamota", "Lavandín", "Canela", "Manzana"],
+        "heart": ["Lirio de los valles", "Azahar"],
+        "base": ["Pachulí", "Ámbar", "Vainilla", "Haba tonka"]
+      },
+      "manufacturerReference": { "concentration": "Eau de Parfum", "capacitiesMl": [100, 150] },
+      "sourceUrl": "https://us.afnan.com/products/9-pm",
+      "imageFile": "src/assets/perfumes/afnan-9pm-official.jpg",
+      "imageAlt": "Frasco negro y transparente de 9PM de Afnan.",
+      "caveat": "La prosa comercial y la pirámide explícita del fabricante discrepan; se usa exclusivamente la pirámide PERFUME NOTES, repetida en Discover The Notes. No es 9PM Rebel, Elixir, Night Out ni Pour Femme."
+    },
+    {
+      "slug": "hawas-ice",
+      "brand": { "id": "rasasi", "name": "Rasasi" },
+      "classification": "men",
+      "olfactoryFamilies": ["Aromática", "Amaderada", "Afrutada"],
+      "shortDescription": "Manzana helada, cítricos y un corazón marino con ciruela.",
+      "description": "Manzana helada y cítricos abren una composición de ciruela, azahar y acorde marino, sobre un fondo de musgo, maderas, ámbar y almizcle.",
+      "notes": {
+        "top": ["Manzana helada", "Bergamota", "Limón", "Anís estrellado"],
+        "heart": ["Azahar", "Acorde marino helado", "Ciruela", "Cardamomo"],
+        "base": ["Musgo cristalino", "Madera a la deriva", "Ámbar", "Almizcle"]
+      },
+      "manufacturerReference": { "concentration": "Eau de Parfum", "capacitiesMl": [100] },
+      "sourceUrl": "https://store.rasasi.com.sa/en/aeezlxd/p330366857",
+      "imageFile": "src/assets/perfumes/rasasi-hawas-ice-official.jpg",
+      "imageAlt": "Frasco azul degradado de Hawas Ice de Rasasi con tapa blanca.",
+      "caveat": "Título y botella indican FOR HIM; la categoría genérica del e-store dice UNISEX. Se priorizan título y rotulado de la botella. La concentración se verifica visualmente en la foto oficial del envase."
+    },
+    {
+      "slug": "hawas-malibu",
+      "brand": { "id": "rasasi", "name": "Rasasi" },
+      "classification": "men",
+      "olfactoryFamilies": ["Fresca"],
+      "shortDescription": "Piña y cítricos con ámbar, iris y un fondo amaderado.",
+      "description": "Piña, naranja y pomelo preceden a un corazón de ámbar, iris y lavanda. El fondo reúne haba tonka, almizcle, cashmeran y pachulí.",
+      "notes": {
+        "top": ["Piña", "Naranja", "Pomelo"],
+        "heart": ["Ámbar", "Iris", "Lavanda"],
+        "base": ["Haba tonka", "Almizcle", "Cashmeran", "Pachulí"]
+      },
+      "manufacturerReference": { "concentration": "Eau de Parfum", "capacitiesMl": [100] },
+      "sourceUrl": "https://store.rasasi.com.sa/en/bpzlndr/p533992836",
+      "imageFile": "src/assets/perfumes/rasasi-hawas-malibu-official.jpg",
+      "imageAlt": "Frasco negro y turquesa de Hawas Malibu de Rasasi.",
+      "caveat": "El texto genérico del diseño de botella menciona mujer, pero el nombre, campo FOR y botella indican masculino. Se omite ese párrafo contradictorio. Concentración verificada en la foto oficial del envase."
+    }
+  ]
+}

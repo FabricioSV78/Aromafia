@@ -1,0 +1,36 @@
+---
+import type { CatalogProduct } from '../domain/product';
+import FragranceNotes from './FragranceNotes.astro';
+import InspiredBySection from './InspiredBySection.astro';
+import TrustStrip from '../../../components/shared/TrustStrip.astro';
+import ReadingPurchase from './ReadingPurchase.astro';
+
+interface Props {
+  product: CatalogProduct;
+}
+const { product } = Astro.props;
+const variant = product.variants[0];
+---
+
+<div class="perfume-reading perfume-reading--editorial" data-book-reading>
+  <FragranceNotes notes={product.notes} editorial />
+  <div class="perfume-reading__aside">
+    <InspiredBySection reference={product.inspiredBy} />
+    <dl class="perfume-reading__facts">
+      <div>
+        <dt>Presentación</dt>
+        <dd>{variant?.capacityMl ? `${variant.capacityMl} ml` : 'Por confirmar'}</dd>
+      </div>
+      {product.occasionSuggestion && (
+        <div>
+          <dt>Ideal para</dt>
+          <dd>{product.occasionSuggestion}</dd>
+        </div>
+      )}
+    </dl>
+    <ReadingPurchase productName={product.displayName} />
+  </div>
+  <div class="editorial-trust" data-editorial-trust>
+    <TrustStrip />
+  </div>
+</div>
