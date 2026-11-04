@@ -31,6 +31,9 @@
     inset: 0;
     width: 100%;
     height: 100%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
   }
   .product-hero__photo-frame picture {
     display: block;
@@ -47,22 +50,6 @@
     mix-blend-mode: normal;
     filter: none;
     mask-image: none;
-  }
-  .is-reading[data-photo-changing] .product-hero__photo-frame {
-    opacity: 0;
-  }
-  @media (prefers-reduced-motion: no-preference) {
-    .is-reading[data-photo-ready] .product-hero__photo-frame {
-      animation: photo-ready 100ms ease-out;
-    }
-    @keyframes photo-ready {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
   }
   .product-hero .perfume-placeholder {
     position: absolute;

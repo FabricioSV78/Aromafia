@@ -4,6 +4,12 @@
 sustituye la previsión anterior de Workers Static Assets. La preparación es local: no se ha
 creado un proyecto remoto, conectado una cuenta ni publicado el sitio.
 
+El propietario compartió después una captura de su versión publicada en
+`https://aromafia.pages.dev/`. Las correcciones responsive posteriores se entregan en el ZIP
+local actualizado; subirlo como un nuevo deployment de ese proyecto para que aparezcan en
+el celular. Esta sesión no ha modificado la cuenta ni el sitio público. La captura no autoriza
+por sí sola activar indexación o cambiar el dominio canónico del build.
+
 Astro conserva `output: 'static'`. El catálogo, la intro, las imágenes y el formulario que
 prepara WhatsApp se entregan como archivos. No necesitan adapter, Functions, base de datos ni
 CLI de Cloudflare. [Astro y Pages](https://developers.cloudflare.com/pages/framework-guides/deploy-an-astro-site/).

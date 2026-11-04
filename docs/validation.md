@@ -1,6 +1,36 @@
 ﻿# Validación del proyecto
 
-## Revisión vigente — preparación de Cloudflare Pages
+## Revisión vigente — fundido general/detalle
+
+**3 de noviembre de2026.** La petición posterior suaviza el cambio de fotografía al entrar
+y regresar. `product-photo.ts` decodifica primero el candidato responsive y funde el único
+`img` durante420ms sobre la fotografía anterior completa, conservada temporalmente en su
+mismo marco. Al finalizar limpia animación, opacidad y respaldo. Movimiento reducido omite
+el efecto; cancelación y desmontaje descartan callbacks tardíos. No cambia la cámara ni el
+tamaño del libro. [Implementación y alcance](product-photo-crossfade.md).
+
+La regresión dirigida completó **92 casos correctos**, sin omisiones ni reintentos, en5.4minutos.
+Comprueba los seis perfumes, ambos sentidos, carga fría/fallida, consulta y compra, píxeles
+sin blanco, nodos reales, lectura editorial, foco, historial y restauración. Un worker con
+Chromium moderno; los dos procesos cerraron con código0, sin reproducir el error de memoria.
+Resultados en `reports/photo-crossfade/e2e.json` y `e2e-exit.json`.
+
+El muestreo final sincronizado de cámara y fotografía completó otros **seis casos correctos**
+en1.4minutos, con procesos nativos de salida0. Se observaron72 cuadros consolidados de los
+seis perfumes, entrada y regreso a1440×900 y390×844:
+[escritorio](../reports/photo-crossfade/crossfade-1440.png),
+[móvil](../reports/photo-crossfade/crossfade-390.png) y
+[visor completo](../reports/photo-crossfade/review.html).
+Se corrigió una pausa pendiente del compositor en la prueba, sin relajar el umbral de píxeles
+ni modificar producción; la evidencia inicial se conserva en `sampling-check/`.
+
+Tipos110 archivos sin errores, advertencias ni hints;115 unitarios en16 archivos, lint y
+formato correctos. Build Pages:69 archivos,3319191 bytes,126 referencias locales válidas;
+JS gzip123408, CSS gzip15848 e HTML máximo51035. Los originales mantienen sus hashes. El ZIP
+renovado pesa2958907 bytes y sus69 archivos coinciden por SHA256 con el build. Mantiene
+`noindex`; no se despliega. Chromium emulado no acredita FPS en teléfonos físicos ni Safari/Firefox.
+
+## Revisión anterior — preparación de Cloudflare Pages
 
 **3 de noviembre de2026.** La petición del propietario prepara Pages estático. Se conservó el
 render de Astro y se añadieron `build:pages` y `check:pages`, sin dependencias ni CLI nuevos.

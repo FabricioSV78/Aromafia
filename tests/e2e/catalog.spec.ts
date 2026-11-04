@@ -24,6 +24,7 @@ async function settled(page: Page): Promise<void> {
 async function openBook(page: Page): Promise<void> {
   await page.goto('/');
   await ready(page);
+  await page.locator('[data-book-open]').scrollIntoViewIfNeeded();
   const closedBounds = await page.locator('[data-book-camera]').boundingBox();
   if (!closedBounds) throw new Error('El libro cerrado debe reservar su geometría.');
   await page.locator('[data-book-open]').click();
@@ -213,11 +214,12 @@ test('mantiene una vista en tamaños habituales y permite lectura sin recortes e
     await expect(visible.locator('[data-product-slug]')).toHaveCount(viewport.width >= 896 ? 4 : 2);
     const rootBox = await page.locator('[data-book-root]').boundingBox();
     if (!rootBox) throw new Error('El libro debe ocupar un espacio en la vista.');
-    if (viewport.height >= 720) expect(rootBox.height).toBeLessThanOrEqual(viewport.height + 2);
+    if (viewport.width >= 896 && viewport.height >= 720)
+      expect(rootBox.height).toBeLessThanOrEqual(viewport.height + 2);
     const bounds = await page.locator('[data-book-viewport]').boundingBox();
     if (!bounds) throw new Error('El escenario del libro debe estar presente.');
     expect(bounds.y).toBeGreaterThanOrEqual(-1);
-    if (viewport.height >= 720)
+    if (viewport.width >= 896 && viewport.height >= 720)
       expect(bounds.y + bounds.height).toBeLessThanOrEqual(viewport.height + 1);
     if (viewport.width === 1440) {
       const book = await page.locator('[data-book-camera]').boundingBox();
@@ -227,7 +229,7 @@ test('mantiene una vista en tamaños habituales y permite lectura sin recortes e
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
       true,
     );
-    if (viewport.height >= 720)
+    if (viewport.width >= 896 && viewport.height >= 720)
       expect(
         await page.evaluate(() => document.documentElement.scrollHeight <= innerHeight + 2),
       ).toBe(true);
@@ -259,7 +261,7 @@ test('las fotografías, nombres y precios caben en sus filas en todas las caras 
         if (!slug) throw new Error('Cada fila debe identificar su perfume.');
         seen.add(slug);
         const context = `${viewport.width}×${viewport.height}, ${slug}`;
-        if (viewport.height < 720) await zone.scrollIntoViewIfNeeded();
+        if (viewport.width < 896 || viewport.height < 720) await zone.scrollIntoViewIfNeeded();
         const row = await zone.boundingBox();
         if (!row) throw new Error(`${context}: la fila debe reservar espacio.`);
         const parts = [
@@ -269,6 +271,7 @@ test('las fotografías, nombres y precios caben en sus filas en todas las caras 
           zone.locator('.perfume-zone__overview-cue'),
         ];
         for (const part of parts) {
+          if (viewport.width < 896) await part.scrollIntoViewIfNeeded();
           await expect(part, context).toBeInViewport({ ratio: 0.98 });
           const bounds = await part.boundingBox();
           if (!bounds) throw new Error(`${context}: imagen y texto deben tener geometría visible.`);
@@ -291,7 +294,7 @@ test('las fotografías, nombres y precios caben en sus filas en todas las caras 
             priceFontSize: Number.parseFloat(getComputedStyle(price).fontSize),
             nameBottom: nameBounds.bottom,
             priceTop: priceBounds.top,
-            textLeft: Math.min(nameBounds.left, priceBounds.left),
+            textLeft: nameBounds.left,
             photoRight: photoBounds.right,
             headingClipped: heading.scrollWidth > heading.clientWidth + 1,
           };
@@ -314,7 +317,7 @@ test('las fotografías, nombres y precios caben en sus filas en todas las caras 
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
       true,
     );
-    if (viewport.height >= 720)
+    if (viewport.width >= 896 && viewport.height >= 720)
       expect(
         await page.evaluate(() => document.documentElement.scrollHeight <= innerHeight + 2),
       ).toBe(true);

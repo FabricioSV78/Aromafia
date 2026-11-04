@@ -12,6 +12,7 @@ import '../features/catalog/styles/book-reading.css';
 import '../features/catalog/styles/editorial-reading.css';
 import '../features/catalog/styles/product-hero.css';
 import '../features/catalog/styles/catalog-reference.css';
+import '../features/catalog/styles/mobile-layout.css';
 import '../features/orders/styles/order-form.css';
 
 const catalog = await catalogRepository.list({ sort: 'editorial' });
@@ -22,6 +23,7 @@ const renderedAt = new Date();
   title="AROMAFIA · Perfumes originales"
   description="Abre el catálogo de AROMAFIA. Perfumes originales en Perú. Huele como jeque, paga como causa."
   themeColor="#12100c"
+  canvasColor="#12100c"
 >
   <Fragment slot="head">
     <style is:inline>

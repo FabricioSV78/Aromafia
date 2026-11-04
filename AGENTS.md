@@ -22,6 +22,11 @@ exacta. El frasco vendido sigue siendo la imagen protagonista. Evidencias en
 `docs/catalog-three-photographs.md` y `docs/inspiration-research.md`.
 El antiguo array `images[]` fue retirado.
 `ProductHero` conserva un único `img` y cambia el `source` de `picture` al abrir/cerrar el detalle.
+`product-photo.ts` funde ambos roles durante420ms después de decodificar el candidato responsive.
+Solo durante el cambio conserva la fotografía anterior completa como respaldo del mismo marco:
+no reconstruye su fondo ni altera el encuadre. Al terminar, reducir movimiento, ocultar pestaña
+o desmontar se limpian la animación nativa y ese respaldo. Detalles en
+`docs/product-photo-crossfade.md`; conservar la cámara y la geometría del libro.
 La estructura vigente está en `docs/perfume-asset-structure.md`: seis carpetas por slug en
 `public/images/perfumes/`, con `general.webp`, `detail.webp` e `inspiration.webp` y sus variantes,
 42 archivos en total. Los WebP opacos ya incorporan fondo, luz, sombra y encuadre; no añadir bordes,
@@ -76,6 +81,18 @@ La revisión móvil posterior reduce únicamente el precio de la vista general y
 `.book-turn-layer` con `overflow: clip` a los límites del libro para evitar que su reverso aparezca
 como una barra exterior. Conservar la rotación3D, el tamaño del libro y las dos caras de escritorio;
 la prueba `mobile-turn-edge.spec.ts` compara píxeles de ambos bordes durante ida y vuelta.
+
+La corrección de la captura del celular está en `docs/mobile-responsive-correction.md`.
+`mobile-layout.css` reorganiza el catálogo por debajo de640px: foto/encabezado, descripción
+de ancho completo y fila de precio/acción. Las filas respetan min-content y el documento
+permite scroll cuando el papel legible no cabe; no restaurar la compresión a100svh ni el salto
+tipográfico móvil a720px. Tablet conserva dos columnas por perfume. Las barras cerrada y
+abierta reservan48px, evitando saltos de marco; el área segura se aplica al pie y al retorno
+sticky. El pie móvil usa dos
+columnas y una fila completa de contraentrega. El lienzo oscuro se limita a esta página
+mediante `canvasColor`; la intro conserva su fondo aprobado. Sin JavaScript hay lectura
+vertical completa. La adaptación se comprueba también con texto al125% y200%, y alturas de navegador
+intermedias, no solamente con los presets de dispositivos.
 
 AROMAFIA vende perfumes originales en Perú. Eslogan: «Huele como jeque, paga como causa».
 Identidad: llama con lentes y vestimenta árabe, humor peruano, actitud y lujo accesible;

@@ -10,6 +10,7 @@ import { mountScene, type SceneContext } from './scene';
 import { createBookCoverTransition } from './book-cover';
 import { createBookTurnTransition } from './book-turn';
 import { captureBookLayout, createBookLayoutTransition } from './book-layout';
+import { createProductPhotoController, type ProductPhotoController } from './product-photo';
 import { initializeOrderForm } from '../features/orders/order-form';
 import { initializeOrderDialog } from '../features/orders/order-dialog';
 
@@ -108,7 +109,7 @@ export function initializeBook(root: HTMLElement): () => void {
   let focusFrame = 0;
   let lastAppliedLocation = '';
   let entryScrollY = 0;
-  const photoLoads = new WeakMap<HTMLElement, () => void>();
+  const photos = new Map<HTMLElement, ProductPhotoController>();
   const animations: gsap.core.Animation[] = [];
   const initialStyles = [volume, pages, cover, progress, camera]
     .filter((element): element is HTMLElement => element !== null)
@@ -458,49 +459,16 @@ export function initializeBook(root: HTMLElement): () => void {
     return null;
   }
 
-  /** Keep the complete general photo visible until the replacement has decoded. */
-  function preparePhoto(zone: HTMLElement, source: HTMLSourceElement) {
-    const image = zone.querySelector<HTMLImageElement>('[data-product-visual] img');
-    if (!image) return;
-    let active = true;
-    const preload = new Image();
-    preload.sizes = source.sizes;
-    preload.srcset = source.srcset;
-    photoLoads.set(zone, () => {
-      active = false;
-      preload.removeAttribute('srcset');
-      preload.removeAttribute('src');
-    });
-    void preload
-      .decode()
-      .then(async () => {
-        if (!active) return;
-        zone.setAttribute('data-photo-changing', '');
-        source.media = 'all';
-        await image.decode();
-        if (!active) return;
-        zone.setAttribute('data-photo-ready', '');
-        zone.removeAttribute('data-photo-changing');
-      })
-      .catch(() => {
-        if (!active) return;
-        source.media = 'not all';
-        zone.removeAttribute('data-photo-changing');
-      });
-  }
-
   function setReading(zone: HTMLElement, enabled: boolean) {
     zone.classList.toggle('is-reading', enabled);
     const detailImage = zone.querySelector<HTMLSourceElement>('[data-detail-image]');
-    if (detailImage) {
-      if (enabled && !photoLoads.has(zone)) preparePhoto(zone, detailImage);
-      if (!enabled) {
-        photoLoads.get(zone)?.();
-        photoLoads.delete(zone);
-        if (detailImage.media !== 'not all') detailImage.media = 'not all';
-        zone.removeAttribute('data-photo-ready');
-        zone.removeAttribute('data-photo-changing');
+    if (detailImage && !disposed) {
+      let photo = photos.get(zone);
+      if (!photo) {
+        photo = createProductPhotoController(zone, detailImage, reduced) ?? undefined;
+        if (photo) photos.set(zone, photo);
       }
+      photo?.setDetail(enabled);
     }
     const body = zone.querySelector<HTMLElement>('[data-book-reading]');
     const trigger = zone.querySelector<HTMLElement>('[data-product-link]');
@@ -924,6 +892,13 @@ export function initializeBook(root: HTMLElement): () => void {
     { signal },
   );
   reduced.addEventListener('change', settleAction, { signal });
+  document.addEventListener(
+    'visibilitychange',
+    () => {
+      if (document.hidden) for (const photo of photos.values()) photo.finish();
+    },
+    { signal },
+  );
   render();
   const disposeMotion = mountScene(
     root,
@@ -953,6 +928,8 @@ export function initializeBook(root: HTMLElement): () => void {
     cancelAnimationFrame(focusFrame);
     clearAction();
     controller.abort();
+    for (const photo of photos.values()) photo.dispose();
+    photos.clear();
     order.dialog.dispose();
     order.form.dispose();
     order.stage.hidden = true;

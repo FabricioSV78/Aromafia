@@ -4,7 +4,7 @@ import { chromium, expect } from '@playwright/test';
 import sharp from 'sharp';
 
 const phase = process.argv[2] ?? 'before';
-const baseUrl = process.env['AUDIT_BASE_URL'] ?? 'http://127.0.0.1:4321/';
+const baseUrl = process.env['AUDIT_BASE_URL'] ?? 'http://127.0.0.1:4322/';
 if (!['before', 'after'].includes(phase)) throw new Error('Use before or after.');
 const output = process.env['AUDIT_OUTPUT_DIR'] ?? join('reports', 'visual-mobile-audit', phase);
 await mkdir(output, { recursive: true });
@@ -23,6 +23,7 @@ const browser = await chromium.launch({ channel: 'chromium', headless: true });
 const records = [];
 const errors = [];
 const images = [];
+const fullOverviews = [];
 try {
   for (const [width, height] of viewports) {
     const context = await browser.newContext({
@@ -63,6 +64,10 @@ try {
       }
       const zone = page.locator(`[data-book-pages] [data-product-slug="${slug}"]`);
       if (index % 2 === 0) {
+        await page.evaluate(() => {
+          window.scrollTo(0, 0);
+          for (const leaf of document.querySelectorAll('[data-book-leaf]')) leaf.scrollTop = 0;
+        });
         await page
           .locator('[data-book-leaf]:visible [data-product-visual] img')
           .evaluateAll(async (images) => {
@@ -70,6 +75,9 @@ try {
             await Promise.all(images.map((image) => image.decode()));
           });
         await shot(`overview-${face}`);
+        const fullFile = `${width}-overview-${face}-full.png`;
+        await page.screenshot({ path: join(output, fullFile), fullPage: true });
+        fullOverviews.push({ width, height, name: `overview-${face}`, file: fullFile });
       }
       await zone.locator('[data-product-link]').click();
       await expect(root).toHaveAttribute('data-book-phase', 'focused');
@@ -144,7 +152,10 @@ try {
   await browser.close();
 }
 
-await writeFile(join(output, 'metrics.json'), JSON.stringify({ records, errors, images }, null, 2));
+await writeFile(
+  join(output, 'metrics.json'),
+  JSON.stringify({ records, errors, images, fullOverviews }, null, 2),
+);
 // Contact sheets preserve the captured pixels; they are review artifacts, never product assets.
 for (const [width] of viewports) {
   const selected = images.filter(

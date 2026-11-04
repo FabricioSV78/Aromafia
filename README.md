@@ -2,9 +2,13 @@
 
 Base técnica del catálogo de perfumes originales en Perú. **«Huele como jeque, paga como causa».**
 
-Preparado para **Cloudflare Pages estático**, sin publicar ni conectar servicios:
+Preparado localmente para **Cloudflare Pages estático**, sin conectar servicios desde esta sesión:
 `npm run build:pages` construye y valida `dist/`.
 [Guía de carga manual e integración Git](docs/deployment.md).
+
+La corrección móvil posterior reorganiza foto, texto y acciones sin comprimirlos a la altura
+del teléfono, admite texto ampliado y conserva las animaciones del libro.
+[Corrección responsive y evidencias](docs/mobile-responsive-correction.md).
 
 La primera entrada al inicio presenta ahora la animación v3 aprobada, por petición expresa
 del propietario. Se reproduce una vez por pestaña y sesión, admite «Saltar intro» o Escape

@@ -7,16 +7,25 @@ mismos nodos y restaura scroll, foco e historial al volver. Las fotografías ya 
 sombras y encuadre; los contornos de preparación permanecen privados. Los iconos compartidos siguen
 siendo SVG externos reutilizables. Alcance actual: `docs/perfume-asset-structure.md`.
 
+El catálogo móvil utiliza filas con mínimos de contenido y permite scroll del documento
+si su papel legible no cabe en el viewport. Por debajo de640px reorganiza los mismos nodos
+en foto/encabezado, descripción y acciones; las mediciones FLIP siguen capturando los elementos
+reales. Las barras de portada y paginación reservan48px en ambos estados,
+para no mover el marco al abrir/cerrar. Ver `docs/mobile-responsive-correction.md`.
+
 La plantilla vigente toma Khamrah Qahwa como referencia y conserva `PerfumeReading` como caja real
 Grid/subgrid para sus animaciones de opacidad/retracción. El mismo `img` representa los roles
-general y detalle dentro de `picture`. `preparePhoto` prepara el candidato responsive fuera del
-DOM, espera su decode y solo entonces activa el source y el estado `data-photo-ready`.
-Mientras espera, se conserva la fotografía general completa y su geometría;
-la consulta y Comprar siguen disponibles. La entrada de opacidad de 100ms se omite bajo reduced
-motion. Un fallo conserva la vista general; regresar y volver a abrir permite reintentar.
-La cancelación por zona impide aplicar respuestas tardías después de retornar o desmontar y
-retira los atributos y candidatos de precarga. No se crea otra copia visible del perfume.
-Ver `docs/catalog-three-photographs.md` y `docs/mobile-visual-audit.md`.
+general y detalle dentro de `picture`. `product-photo.ts` prepara el candidato responsive fuera
+del DOM, espera su decode y solo entonces activa el source. Conserva la fotografía anterior
+completa como respaldo temporal del mismo marco mientras decodifica el `img` real y funde su
+opacidad durante420ms, tanto al entrar como al regresar. No reconstruye fondos ni añade otro
+nodo de producto. Al terminar retira el respaldo y todos los estilos temporales.
+La consulta y Comprar siguen disponibles mientras carga. Movimiento reducido y pestañas ocultas
+asientan el cambio sin fundido. Un fallo conserva la fotografía anterior; salir y volver permite
+reintentar. La generación de cada solicitud descarta respuestas tardías al cambiar de dirección
+o desmontar, cancela la animación nativa y libera el candidato de precarga. La geometría y la
+timeline GSAP de la cámara permanecen independientes.
+Ver `docs/product-photo-crossfade.md`, `docs/catalog-three-photographs.md` y `docs/mobile-visual-audit.md`.
 
 F repara la visibilidad del control enfocado al cambiar el tamaño de la ventana, recibir foco o
 cerrar la compra. Solo desplaza el documento si el control sale del viewport o queda completamente
@@ -27,8 +36,9 @@ Verificación y límites: `docs/book-navigation-subphase-f.md`.
 
 La subfase E usa GSAP para apertura/cierre, giro de caras, cámara y revelado del detalle real.
 El nuevo brief exige navegación espacial continua y retira el modal de la fase 4. El libro permanece en una sola
-vista. CSS cubre estados simples y el volumen del libro; GSAP es el único
-motor de animación. ScrollTrigger se importa solo con `scroll: true` y no se necesita para esta escena.
+vista. CSS cubre estados simples y el volumen del libro; GSAP coordina las escenas del libro.
+El fundido puntual de fotografías usa la API nativa de animación, sin otra biblioteca.
+ScrollTrigger se importa solo con `scroll: true` y no se necesita para esta escena.
 Motion y Three.js quedan fuera hasta demostrar una necesidad que justifique su coste.
 
 `mountScene(root, factory, options)` devuelve una función de limpieza idempotente. La fábrica es

@@ -98,6 +98,7 @@ for (const viewport of [
       const visual = page.locator(
         `[data-book-pages] [data-product-slug="${product.slug}"] [data-product-visual]`,
       );
+      if (viewport.width < 896) await visual.scrollIntoViewIfNeeded();
       await expect(visual).toBeInViewport({ ratio: 0.98 });
       const box = await visual.boundingBox();
       if (!box) throw new Error('Las seis fotografías deben reservar su superficie.');
@@ -143,9 +144,13 @@ for (const viewport of [
         const purchase = zone?.querySelector('.perfume-zone__purchase');
         if (!zone || !heading || !description || !purchase)
           throw new Error('Cada fila necesita encabezado, descripción y compra.');
+        const headingBottom = heading.getBoundingClientRect().bottom;
+        const headerBottom =
+          innerWidth < 640
+            ? Math.max(headingBottom, element.getBoundingClientRect().bottom)
+            : headingBottom;
         return {
-          descriptionGap:
-            description.getBoundingClientRect().top - heading.getBoundingClientRect().bottom,
+          descriptionGap: description.getBoundingClientRect().top - headerBottom,
           purchaseGap:
             purchase.getBoundingClientRect().top - description.getBoundingClientRect().bottom,
         };
@@ -271,6 +276,7 @@ for (const [ordinal, product] of products.entries()) {
     await expect(page.locator('[data-editorial-detail]')).toHaveCount(products.length);
     await expect(zone).toHaveClass(/perfume-zone--editorial/);
     const source = zone.locator('[data-product-link]');
+    await source.scrollIntoViewIfNeeded();
     const selectors = [
       '[data-product-visual]',
       '[data-product-visual] img',

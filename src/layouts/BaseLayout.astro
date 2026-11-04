@@ -7,12 +7,13 @@ interface Props {
   description: string;
   themeColor?: string;
   noindex?: boolean;
+  canvasColor?: string;
 }
-const { title, description, themeColor = '#f0e8d5', noindex = false } = Astro.props;
+const { title, description, themeColor = '#f0e8d5', noindex = false, canvasColor } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es-PE">
+<html lang="es-PE" style={canvasColor ? { '--page-canvas': canvasColor } : undefined}>
   <head>
     <PageHead title={title} description={description} themeColor={themeColor} noindex={noindex} />
     <slot name="head" />
