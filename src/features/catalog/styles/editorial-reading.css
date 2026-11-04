@@ -201,11 +201,6 @@
     text-decoration: underline;
     text-underline-offset: 3px;
   }
-  .product-price__comparison-label {
-    font-family: var(--font-body);
-    font-size: 0.625rem;
-    font-weight: 400;
-  }
   .book-experience .perfume-zone.is-reading .product-price__reference .product-price__previous {
     order: 0;
   }

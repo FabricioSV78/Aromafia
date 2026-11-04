@@ -1,6 +1,15 @@
 ﻿# Validación del proyecto
 
-## Revisión vigente — restauración del catálogo móvil compacto
+## Revisión vigente — retirar el prefijo «Ref.»
+
+**3 de noviembre de2026.** Se retiró únicamente el texto visible «Ref.» del componente de
+precios compartido y su regla CSS sin uso. Se conservan el importe tachado, su fuente accesible,
+enlace y precio actual. No cambian datos, distribución ni animaciones. Tipos, lint, formato,
+integridad, build y presupuesto correctos. Diez regresiones dirigidas aprobadas: ocho de los
+seis detalles y dos recorridos generales. ZIP de Pages renovado y cotejado con `dist`, sin publicar.
+Resultados en `reports/price-label-cleanup/`.
+
+## Revisión anterior — restauración del catálogo móvil compacto
 
 **3 de noviembre de2026.** La petición posterior recupera expresamente la primera captura:
 foto izquierda y marca, nombre, descripción, precios y Explorar en la columna derecha,

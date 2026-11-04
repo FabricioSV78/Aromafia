@@ -9,7 +9,8 @@ con una distribución común y altura natural, sin reservar una segunda línea v
 permite lectura vertical natural. La referencia mide210px de alto en escritorio,165px en escritorio
 compacto y200px en móvil. Los enlaces de investigación bajo la foto, la concentración y el aviso
 de similitud se retiraron de la interfaz. Las fuentes siguen en los datos; los precios externos
-conservan su enlace verificable en «Ref.». [Revisión del detalle](detail-reference-refinement.md).
+conservan su enlace verificable en el importe tachado. El prefijo visible «Ref.» fue retirado
+por la petición posterior del propietario. [Revisión del detalle](detail-reference-refinement.md).
 
 Cada perfume tiene tres roles fotográficos explícitos: `generalImage`, `detailImage` e
 `inspiredBy.image`. La vista general agrupa nombre, descripción y precio sin reservar huecos

@@ -30,7 +30,6 @@ const { price, marketReference } = Astro.props;
             rel="noopener noreferrer"
             title={`Referencia de ${marketReference.source.label}, consultada el ${marketReference.checkedOn}. Abre otra pestaña.`}
           >
-            <span class="product-price__comparison-label">Ref.</span>{' '}
             <s class="product-price__previous">
               <span class="sr-only">Precio en {marketReference.source.label}: </span>
               {formatPen(marketReference.price)}

@@ -10,7 +10,7 @@ export async function expectPublicPrices(zone: Locator, product: CatalogProduct)
   const market = zone.locator('[data-market-reference]');
   if (variant.marketReference && !variant.regularPrice) {
     await expect(market).toHaveCount(1);
-    await expect(market).toContainText(/ref\./i);
+    await expect(market).not.toContainText(/ref\./i);
     await expect(market.locator('s')).toContainText(formatPen(variant.marketReference.price));
     await expect(zone.locator('[data-market-source]')).toHaveAttribute(
       'href',

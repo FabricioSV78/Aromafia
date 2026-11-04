@@ -51,7 +51,8 @@ histórica, no las rutas públicas actuales. La revisión de `docs/detail-refere
 amplía la inspiración a210px (165px en escritorio compacto y200px en móvil), siempre menor que
 la fotografía principal. El título ocupa su altura natural, sin reservar una segunda línea vacía.
 No reintroducir la fila de fuentes bajo la foto, el bloque de concentración ni el aviso de similitud
-retirados por petición expresa; conservar la investigación en datos y la fuente del precio en «Ref.».
+retirados por petición expresa; conservar la investigación en datos y la fuente del precio en
+el importe tachado, sin restaurar el prefijo visible «Ref.».
 
 El detalle y las hojas comparten `--book-page-surface`, sin una paleta de panel diferente.
 La revisión editorial posterior de `docs/detail-editorial-balance.md` parte de9PM y aplica una
@@ -68,7 +69,8 @@ el centro generado de la antigua imagen de trabajo.
 «Precio de oferta» queda retirado. El propietario pidió precios realistas no inventados y delegó su
 selección. Los precios anteriores de AROMAFIA siguen desconocidos: `regularPrice` permanece null.
 `marketReference` contiene únicamente precios observados en otras tiendas peruanas, con fuente y
-fecha. Se muestran tachados con «Ref.» y enlace verificable; no son un historial de AROMAFIA ni
+fecha. Se muestran tachados con enlace verificable y fuente accesible; la última petición
+retira únicamente el prefijo visible «Ref.». No son un historial de AROMAFIA ni
 autorizan porcentajes de ahorro. Hay cinco; Royale Opal no tiene uno peruano verificable y no se
 rellena. Evidencias en `docs/catalog-reference-prices-2026-11-03.md`.
 Las entregas anteriores y la aceptación F se conservan como historia. Esta revisión termina al
