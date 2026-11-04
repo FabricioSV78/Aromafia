@@ -2,6 +2,7 @@ import { expect, test, type Page } from './fixtures';
 import { contact } from '../../src/config/contact';
 import { products } from '../../src/features/catalog/data/products';
 import { expectPublicPrices } from './catalog-assertions';
+import { getOverviewName } from '../../src/features/catalog/presentation/overview-name';
 
 const perfumes = [
   { slug: '9pm', name: '9 pm', cents: 15_000 },
@@ -115,7 +116,12 @@ test('recorre tres caras con dos perfumes y una contraportada, sin duplicar prod
       const perfume = perfumes.find((item) => item.slug === slug);
       if (!perfume) throw new Error('Zona visible sin producto conocido.');
       seen.add(perfume.slug);
-      await expect(zone.getByRole('heading', { name: perfume.name, exact: true })).toBeVisible();
+      await expect(
+        zone.getByRole('heading', {
+          name: getOverviewName({ slug: perfume.slug, displayName: perfume.name }),
+          exact: true,
+        }),
+      ).toBeVisible();
       await expect(zone).toContainText(currency.format(perfume.cents / 100));
       const product = products.find((item) => item.slug === slug);
       const image = product?.generalImage;

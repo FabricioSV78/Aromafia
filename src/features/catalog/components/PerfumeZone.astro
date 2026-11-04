@@ -4,6 +4,7 @@ import { getVariantPriceDisplay } from '../domain/variant-price';
 import ProductPrice from './ProductPrice.astro';
 import PerfumeReading from './PerfumeReading.astro';
 import ProductHero from './ProductHero.astro';
+import { getOverviewName } from '../presentation/overview-name';
 
 interface Props {
   product: CatalogProduct;
@@ -40,7 +41,12 @@ const price = variant
     <div class="perfume-zone__copy">
       <div class="perfume-zone__heading">
         <p class="perfume-zone__brand">{product.brand?.name ?? 'Marca por confirmar'}</p>
-        <h4 id={`nombre-${product.slug}`} translate="no">
+        <h4
+          id={`nombre-${product.slug}`}
+          translate="no"
+          data-overview-name={getOverviewName(product)}
+          data-detail-name={product.displayName}
+        >
           {product.displayName}
         </h4>
       </div>

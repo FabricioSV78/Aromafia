@@ -81,7 +81,7 @@ try {
       }
       await zone.locator('[data-product-link]').click();
       await expect(root).toHaveAttribute('data-book-phase', 'focused');
-      if (phase === 'after') await expect(zone).toHaveAttribute('data-photo-ready', '');
+      await expect(zone).toHaveAttribute('data-photo-ready', '');
       await zone.locator('[data-product-visual] img').evaluate(async (image) => {
         image.loading = 'eager';
         await image.decode();

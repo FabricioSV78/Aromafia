@@ -25,13 +25,16 @@
   .is-enhanced .perfume-zone--editorial.is-reading .perfume-zone__open {
     position: relative;
     grid-template-columns: minmax(0, 0.38fr) minmax(0, 0.4fr) minmax(0, 0.22fr);
-    grid-template-rows: auto auto auto minmax(0, 1fr) auto;
+    grid-template-rows: auto auto auto auto minmax(0, 1fr) auto;
     gap: 0.75rem clamp(0.875rem, 2vw, 1.75rem);
     padding: 0;
   }
   .is-enhanced .perfume-zone--editorial.is-reading .perfume-zone__visual.product-hero-slot {
     grid-column: 1;
-    grid-row: 1 / 5;
+    grid-row: 1 / 6;
+    align-self: start;
+    height: auto;
+    aspect-ratio: 1;
     padding: 0;
     border: 0;
     box-shadow: none;
@@ -86,8 +89,8 @@
     gap: 0;
   }
   .is-enhanced .perfume-zone--editorial.is-reading .product-price__values {
-    align-items: center;
-    gap: 0.6rem;
+    align-items: baseline;
+    gap: 0.4rem 0.8rem;
   }
   .is-enhanced .perfume-zone--editorial.is-reading .product-price__current {
     padding: 0.15rem 0.75rem 0.25rem;
@@ -130,13 +133,13 @@
     min-height: 0;
   }
   .is-enhanced .perfume-reading--editorial .perfume-reading__aside {
-    grid-area: 1 / 3 / 5 / 4;
+    grid-area: 1 / 3 / 6 / 4;
     display: flex;
     flex-direction: column;
-    align-self: stretch;
+    align-self: start;
     min-height: 0;
     min-width: 0;
-    gap: 1.25rem;
+    gap: 1rem;
     padding-left: 1.1rem;
     border-left: 1px solid var(--editorial-rule);
   }
@@ -272,14 +275,14 @@
     flex-direction: column;
     width: 100%;
     gap: 0.65rem;
-    margin-top: auto;
+    margin-top: 0;
   }
   .is-enhanced .perfume-reading--editorial .perfume-reading__cta {
     width: 100%;
   }
   .is-enhanced .perfume-zone--editorial.is-reading .editorial-trust {
     display: block;
-    grid-area: 5 / 1 / 6 / -1;
+    grid-area: 6 / 1 / 7 / -1;
     align-self: end;
     border-top: 1px solid var(--editorial-rule);
     padding-top: 0.9rem;
@@ -310,6 +313,33 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+  }
+  @media (min-width: 56rem) and (min-height: 720px) {
+    .is-enhanced .perfume-zone--editorial.is-reading {
+      display: grid;
+      align-content: center;
+    }
+    .is-enhanced .perfume-zone--editorial.is-reading .perfume-zone__open {
+      height: auto;
+    }
+    .perfume-reading--editorial .perfume-reading__facts {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+  }
+  @media (min-width: 56rem) and (min-height: 801px) {
+    .is-enhanced .perfume-zone--editorial.is-reading .perfume-zone__description {
+      font-size: 1rem;
+    }
+    .perfume-reading--editorial .fragrance-notes dt,
+    .perfume-reading--editorial .fragrance-notes dd,
+    .perfume-reading--editorial .perfume-reading__facts {
+      font-size: 0.875rem;
+      line-height: 1.45;
+    }
+    .fragrance-notes--editorial .fragrance-notes__groups > div {
+      padding-block: 0.65rem;
+    }
   }
   @media (min-width: 56rem) and (max-height: 800px) {
     .perfume-zone--editorial {
@@ -368,6 +398,16 @@
       height: 22px;
     }
   }
+  @media (min-width: 56rem) and (min-height: 720px) and (max-height: 800px) {
+    .perfume-reading--editorial .fragrance-notes dt,
+    .perfume-reading--editorial .fragrance-notes dd {
+      font-size: 0.875rem;
+      line-height: 1.4;
+    }
+    .fragrance-notes--editorial .fragrance-notes__groups > div {
+      padding-block: 0.5rem;
+    }
+  }
   /* Preserve the readable paper already reserved for short desktop windows. */
   @media (min-width: 56rem) and (max-height: 719px) {
     .is-enhanced .perfume-zone--editorial.is-reading {
@@ -377,7 +417,7 @@
     .is-enhanced .perfume-zone--editorial.is-reading .perfume-zone__open {
       height: 100%;
       min-height: 0;
-      grid-template-rows: auto auto auto minmax(0, 1fr) auto;
+      grid-template-rows: auto auto auto auto minmax(0, 1fr) auto;
     }
   }
   @media (max-width: 55.999rem) {

@@ -7,11 +7,18 @@ mismos nodos y restaura scroll, foco e historial al volver. Las fotografías ya 
 sombras y encuadre; los contornos de preparación permanecen privados. Los iconos compartidos siguen
 siendo SVG externos reutilizables. Alcance actual: `docs/perfume-asset-structure.md`.
 
-El catálogo móvil utiliza filas con mínimos de contenido y permite scroll del documento
-si su papel legible no cabe en el viewport. Por debajo de640px reorganiza los mismos nodos
-en foto/encabezado, descripción y acciones; las mediciones FLIP siguen capturando los elementos
-reales. Las barras de portada y paginación reservan48px en ambos estados,
-para no mover el marco al abrir/cerrar. Ver `docs/mobile-responsive-correction.md`.
+La revisión editorial desde9PM utiliza el mismo Grid/subgrid con una banda de contenido
+natural centrada en escritorio. Foto, marca y referencia comparten inicio; las notas no
+ocupan una fila flexible y la compra permanece agrupada con sus datos. El `img`, el wrapper
+de lectura y los nodos medidos se conservan, por lo que FLIP y el fundido no necesitan copias
+ni otra timeline. Ver `docs/detail-editorial-balance.md`.
+
+La revisión móvil vigente recupera foto izquierda y toda la información a la derecha, con
+dos perfumes por cara. `setReading` cambia el mismo h4 entre su etiqueta corta de general y
+su nombre completo de detalle antes de medir FLIP; al desmontar restaura el nombre completo.
+El marco aprovecha el viewport habitual y permite reflow en alturas extremas/texto ampliado.
+Las barras de portada y paginación reservan48px en ambos estados. No volver a separar
+descripción y acciones de la columna derecha. Ver `docs/mobile-compact-restore.md`.
 
 La plantilla vigente toma Khamrah Qahwa como referencia y conserva `PerfumeReading` como caja real
 Grid/subgrid para sus animaciones de opacidad/retracción. El mismo `img` representa los roles

@@ -1,5 +1,17 @@
 import { defineConfig, devices } from '@playwright/test';
 
+const requestedPort = process.env['AROMAFIA_TEST_PORT'];
+const testPort = Number(requestedPort ?? '4322');
+if (
+  (requestedPort !== undefined && !/^\d+$/.test(requestedPort)) ||
+  !Number.isInteger(testPort) ||
+  testPort < 1024 ||
+  testPort > 65535
+) {
+  throw new Error('AROMAFIA_TEST_PORT must be an integer between 1024 and 65535.');
+}
+const testBaseUrl = `http://127.0.0.1:${testPort}`;
+
 export default defineConfig({
   testDir: './tests/e2e',
   fullyParallel: false,
@@ -8,7 +20,7 @@ export default defineConfig({
   workers: 1,
   reporter: [['list'], ['html', { open: 'never' }]],
   use: {
-    baseURL: 'http://127.0.0.1:4322',
+    baseURL: testBaseUrl,
     channel: 'chromium',
     headless: true,
     trace: 'retain-on-failure',
@@ -19,9 +31,9 @@ export default defineConfig({
     { name: 'mobile-chromium', use: { ...devices['Pixel 7'] } },
   ],
   webServer: {
-    command: 'node scripts/astro.mjs preview --host 127.0.0.1 --port 4322 --ignore-lock',
-    url: 'http://127.0.0.1:4322',
-    reuseExistingServer: !process.env['CI'],
+    command: `node scripts/astro.mjs preview --host 127.0.0.1 --port ${testPort} --ignore-lock`,
+    url: testBaseUrl,
+    reuseExistingServer: requestedPort === undefined && !process.env['CI'],
     timeout: 30000,
   },
 });

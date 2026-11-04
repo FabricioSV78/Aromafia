@@ -144,11 +144,7 @@ for (const viewport of [
         const purchase = zone?.querySelector('.perfume-zone__purchase');
         if (!zone || !heading || !description || !purchase)
           throw new Error('Cada fila necesita encabezado, descripción y compra.');
-        const headingBottom = heading.getBoundingClientRect().bottom;
-        const headerBottom =
-          innerWidth < 640
-            ? Math.max(headingBottom, element.getBoundingClientRect().bottom)
-            : headingBottom;
+        const headerBottom = heading.getBoundingClientRect().bottom;
         return {
           descriptionGap: description.getBoundingClientRect().top - headerBottom,
           purchaseGap:

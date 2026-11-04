@@ -8,7 +8,7 @@ fotográficos originales. Los contornos privados recortan solo el campo exterior
 de archivos; no regenerar frascos, etiquetas ni cajas. El título visible continúa retirado y las barras
 reservan48px en todos los estados para mantener el marco del libro.
 
-El brief vigente adopta **Khamrah Qahwa como plantilla única de detalle** para los seis perfumes:
+La base adopta **Khamrah Qahwa como plantilla única de detalle** para los seis perfumes:
 `docs/catalog-khamrah-unification.md`. `editorial-reading.css` usa Grid/subgrid con foto izquierda,
 información y notas centrales, datos complementarios/compra a la derecha y beneficios en la base.
 El encabezado común admite una o dos líneas; no restaurar el tratamiento de título exclusivo de
@@ -54,6 +54,12 @@ No reintroducir la fila de fuentes bajo la foto, el bloque de concentración ni 
 retirados por petición expresa; conservar la investigación en datos y la fuente del precio en «Ref.».
 
 El detalle y las hojas comparten `--book-page-surface`, sin una paleta de panel diferente.
+La revisión editorial posterior de `docs/detail-editorial-balance.md` parte de9PM y aplica una
+sola composición a los seis: tres comienzos alineados, fotografía cuadrada arriba, contenido
+de altura natural centrado en el papel de escritorio y compra agrupada con la referencia/datos.
+Las filas de Grid/subgrid no reparten espacio sobrante entre textos y Comprar no usa margen
+automático. Precio vigente y referencia externa alinean sus textos; no inventar históricos.
+Conservar el flujo móvil, las fotografías terminadas y los mismos nodos de FLIP/fundido.
 Mandarin detalle conserva el maestro cuadrado con extensión exclusiva del fondo lateral autorizada
 por el propietario; el frasco y la caja mantienen sus proporciones. Su historia está en
 `docs/detail-paper-and-photo-background.md`; no restaurar los derivados retirados ni publicar
@@ -82,17 +88,18 @@ La revisión móvil posterior reduce únicamente el precio de la vista general y
 como una barra exterior. Conservar la rotación3D, el tamaño del libro y las dos caras de escritorio;
 la prueba `mobile-turn-edge.spec.ts` compara píxeles de ambos bordes durante ida y vuelta.
 
-La corrección de la captura del celular está en `docs/mobile-responsive-correction.md`.
-`mobile-layout.css` reorganiza el catálogo por debajo de640px: foto/encabezado, descripción
-de ancho completo y fila de precio/acción. Las filas respetan min-content y el documento
-permite scroll cuando el papel legible no cabe; no restaurar la compresión a100svh ni el salto
-tipográfico móvil a720px. Tablet conserva dos columnas por perfume. Las barras cerrada y
-abierta reservan48px, evitando saltos de marco; el área segura se aplica al pie y al retorno
-sticky. El pie móvil usa dos
-columnas y una fila completa de contraentrega. El lienzo oscuro se limita a esta página
-mediante `canvasColor`; la intro conserva su fondo aprobado. Sin JavaScript hay lectura
-vertical completa. La adaptación se comprueba también con texto al125% y200%, y alturas de navegador
-intermedias, no solamente con los presets de dispositivos.
+La petición vigente **recupera la primera captura móvil** y sustituye la distribución general
+de `docs/mobile-responsive-correction.md`, que queda como historia. Ver
+`docs/mobile-compact-restore.md`: foto izquierda y **marca, nombre, descripción, precios y
+Explorar juntos a la derecha**, dos perfumes por página. No volver a colocar descripción o
+acción debajo de la foto. El libro y sus controles caben en alturas móviles habituales;
+las filas conservan mínimos de contenido y el scroller real permite acceder al texto ampliado.
+Los tres beneficios vuelven a la misma fila inferior. Las barras cerrada/abierta reservan48px
+y el lienzo oscuro/intro aprobada se mantienen. El detalle editorial previo sigue intacto.
+`presentation/overview-name.ts` contiene los seis nombres cortos aprobados; son solo etiquetas
+de la vista general. El mismo h4 cambia al nombre completo antes de medir el detalle y lo
+restaura al volver, sin alterar identidad, rutas, datos comerciales ni nombres de compra.
+Sin JavaScript o al desmontar se conserva la lectura completa con nombres originales.
 
 AROMAFIA vende perfumes originales en Perú. Eslogan: «Huele como jeque, paga como causa».
 Identidad: llama con lentes y vestimenta árabe, humor peruano, actitud y lujo accesible;

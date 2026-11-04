@@ -1,6 +1,79 @@
 ﻿# Validación del proyecto
 
-## Revisión vigente — fundido general/detalle
+## Revisión vigente — restauración del catálogo móvil compacto
+
+**3 de noviembre de2026.** La petición posterior recupera expresamente la primera captura:
+foto izquierda y marca, nombre, descripción, precios y Explorar en la columna derecha,
+dos perfumes por hoja. Se retira la distribución con descripción/acción debajo de la foto.
+Los nombres cortos se aplican únicamente a general; el mismo h4, el detalle, el formulario,
+los identificadores y los datos comerciales conservan sus contratos originales.
+[Alcance y tabla de etiquetas](mobile-compact-restore.md).
+
+Antes/después:23 capturas por pasada en ocho combinaciones de ancho/alto,48 perfumes visibles
+en cada recorrido. Se observaron las tres hojas móviles y muestras de320px,tablet y escritorio.
+A360×680,360×740,393×745,390×760 y430×932 el documento no necesita scroll y los controles
+quedan dentro del viewport en las tres hojas; en alturas extremas se conserva acceso mediante
+scroll, sin mover el contenido fuera de su columna. [Capturas y comparativas](../reports/compact-catalog/review.html).
+
+Tipos114 archivos sin errores, advertencias ni hints;115 unitarios en16 archivos, lint,
+formato, integridad y build de Pages correctos. JS gzip123460, CSS gzip16495 e HTML máximo51477.
+No se elevan presupuestos ni se añaden dependencias. El paquete tiene69 archivos,3325709 bytes
+y126 referencias locales válidas. ZIP renovado:2959698 bytes, todas las entradas coinciden por
+SHA256 con `dist`. No se publica desde esta sesión.
+
+La aceptación final completó **111 aprobados y tres omisiones previstas de114 casos** en8.1minutos,
+cero inesperados y cero flaky. Un worker, cero reintentos y dos procesos Chromium de salida0.
+Las omisiones son las tres comparaciones de borde del giro en el proyecto de escritorio;
+las tres pasan en el proyecto táctil móvil. Incluye los seis perfumes, nombres por vista,
+compra original, mismo h4, movimiento normal/reducido, retorno, teclado, HTML sin JavaScript,
+texto al125%/200%, rotación y cambio de altura. Resultados en `reports/compact-catalog/summary.json`.
+La regresión adicional de fotografías iguales y títulos generales completó12 casos correctos
+en28.4s, sin omisiones ni reintentos.
+
+## Revisión anterior — equilibrio editorial y responsive
+
+**3 de noviembre de2026.** La corrección parte de9PM y aplica una sola composición a los
+seis perfumes: inicios de columna alineados, foto completa, contenido de altura natural,
+notas agrupadas, datos y compra próximos y precios alineados por su línea de texto. Se
+conservan el papel, las fotos, las animaciones y los nodos reales.
+[Cambios y evidencias](detail-editorial-balance.md).
+
+Se capturaron48 detalles antes y48 después, en ocho resoluciones; cada pasada genera156
+capturas de viewport y24 vistas generales completas, con cero errores de página y cero
+desbordamientos horizontales. Se observaron las ocho hojas de contacto posteriores y las
+comparaciones de9PM. Las pruebas de alineación y ventanas compactas completaron12 casos
+correctos en26.2s. La regresión final terminó con **121 aprobados y una omisión prevista de122
+casos**, cero inesperados y cero flaky, en7.6minutos. Un worker, cero reintentos y los dos
+procesos Chromium de salida0. Recorre los seis perfumes, lectura, compra, retorno, texto
+al125%/200%, cambios de tamaño, gesto táctil, giro, fundido y movimiento reducido. Los resultados
+están en `reports/detail-editorial/final-e2e.json`, `final-e2e-exit.json` y `summary.json`.
+Tipos112 archivos sin errores, advertencias ni hints;115 unitarios en16
+archivos, lint y formato correctos. [Comparaciones de9PM y los seis perfumes](../reports/detail-editorial/review.html).
+
+Build Pages:69 archivos,3324858 bytes,126 referencias locales; JS gzip123408, CSS gzip16533
+e HTML máximo51084. El ZIP actualizado mide2959631 bytes y sus69 archivos coinciden por
+SHA256 con `dist`. No se modifican originales ni dependencias y no se publica.
+
+La prueba de recorrido inicial registró una conexión rechazada del preview compartido, no
+un archivo fotográfico corrupto. El recorrido final usa un preview aislado en4324 y conserva
+un worker y Chromium moderno. La red del entorno bloqueó la URL pública; estas verificaciones
+son locales y emuladas, sin acreditar teléfonos físicos, Safari/Firefox ni60FPS de campo.
+
+## Corrección móvil anterior — captura del propietario
+
+El catálogo móvil deja que sus filas crezcan con el contenido, reserva48px tanto cerrado
+como abierto y reorganiza foto/título, descripción y precio/acción sin cortar textos. Se
+retiran los cambios tipográficos abruptos por altura, se ordena el pie y el lienzo exterior
+mantiene el color oscuro. Admite texto al125% y200% y cambio de altura del navegador.
+[Corrección y comparativas](mobile-responsive-correction.md).
+
+La aceptación móvil previa a la redistribución posterior terminó con188 aprobados y cuatro
+omisiones previstas de192 casos, cero inesperados y cero flaky, en9.6minutos. Un worker,
+cero reintentos y dos procesos Chromium de salida0. La matriz adicional cubre diez combinaciones
+de ancho/alto/texto; ninguno de sus dos productos por hoja desborda su fila.
+[Informe móvil](../reports/mobile-responsive/review.html).
+
+## Revisión anterior — fundido general/detalle
 
 **3 de noviembre de2026.** La petición posterior suaviza el cambio de fotografía al entrar
 y regresar. `product-photo.ts` decodifica primero el candidato responsive y funde el único

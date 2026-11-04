@@ -6,9 +6,10 @@ Preparado localmente para **Cloudflare Pages estático**, sin conectar servicios
 `npm run build:pages` construye y valida `dist/`.
 [Guía de carga manual e integración Git](docs/deployment.md).
 
-La corrección móvil posterior reorganiza foto, texto y acciones sin comprimirlos a la altura
-del teléfono, admite texto ampliado y conserva las animaciones del libro.
-[Corrección responsive y evidencias](docs/mobile-responsive-correction.md).
+La revisión móvil vigente recupera la fotografía a la izquierda y toda la información a la
+derecha, con dos perfumes por página y nombres cortos solo en la vista general. El detalle
+y la compra conservan los nombres completos, y las animaciones siguen sobre los mismos nodos.
+[Restauración compacta y evidencias](docs/mobile-compact-restore.md).
 
 La primera entrada al inicio presenta ahora la animación v3 aprobada, por petición expresa
 del propietario. Se reproduce una vez por pestaña y sesión, admite «Saltar intro» o Escape
@@ -25,6 +26,9 @@ encabezado de altura natural y columnas alineadas. Las referencias crecen a210px
 165px en ventanas compactas y200px en móvil. Se retiraron los enlaces bajo la foto, el bloque de
 concentración y el aviso de similitud por petición expresa.
 [Detalle y comparaciones visuales](docs/detail-reference-refinement.md).
+La revisión posterior alinea las tres columnas desde9PM y agrupa notas, datos y compra en
+una banda editorial de altura natural, común a los seis perfumes.
+[Equilibrio de las fichas y comparaciones](docs/detail-editorial-balance.md).
 Cada perfume tiene su carpeta pública con `general.webp`,
 `detail.webp` e `inspiration.webp`, más sus variantes: **18 composiciones principales y 42 archivos**.
 Las fotografías ya incorporan fondo, sombra y encuadre; la interfaz no añade una escena, borde

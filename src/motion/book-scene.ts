@@ -200,7 +200,7 @@ export function initializeBook(root: HTMLElement): () => void {
         readingPage ||= selected;
         if (selected) {
           const title = zone.querySelector('h4');
-          spatial.focusedName.textContent = title?.textContent?.trim() ?? '';
+          spatial.focusedName.textContent = title?.dataset['detailName'] ?? '';
         }
       }
       leaf.classList.toggle('is-reading-page', readingPage);
@@ -461,6 +461,9 @@ export function initializeBook(root: HTMLElement): () => void {
 
   function setReading(zone: HTMLElement, enabled: boolean) {
     zone.classList.toggle('is-reading', enabled);
+    const heading = zone.querySelector<HTMLElement>('h4');
+    const label = heading?.dataset[enabled || disposed ? 'detailName' : 'overviewName'];
+    if (heading && label && heading.textContent?.trim() !== label) heading.textContent = label;
     const detailImage = zone.querySelector<HTMLSourceElement>('[data-detail-image]');
     if (detailImage && !disposed) {
       let photo = photos.get(zone);
